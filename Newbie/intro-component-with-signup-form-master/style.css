@@ -1,0 +1,155 @@
+body{
+    background-color: hsl(0, 100%, 74%);
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.picture{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* heading */
+
+.heading{
+    margin: 2rem;
+    color: white;
+    text-align: center;
+}
+
+h1{
+    font-size: 2rem;
+    font-weight: 1000;
+}
+
+.p-heading{
+    font-weight: 500;
+}
+
+/* form */
+
+.form-section{
+    margin: 2rem;
+}
+
+.special-offer{
+    padding: .5rem;
+    background-color: hsl(248, 32%, 49%);
+    border-radius: 10px;
+    text-align: center;
+    color: white;    
+    font-size: .8rem;
+}
+
+form{
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+input{
+    width: 90%;
+    padding: 5%;
+    font-weight: 700;
+    color: hsl(249, 10%, 26%);
+    border-radius: 5px;
+    border: 1px solid hsl(249, 10%, 26%);
+    margin-top: .25rem;
+}
+
+button{
+    background-color: hsl(154, 59%, 51%);
+    color: white;
+    border: none;
+    margin-top: 1rem;
+    text-align: center;
+    padding: .75rem;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 150ms;
+}
+
+button:hover{
+    background-color: hsl(154, 55%, 36%);
+}
+
+.p-form{
+    text-align: center;
+    font-size: .75rem;
+}
+
+a{
+    color: hsl(0, 100%, 74%);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+label{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-error{
+    margin: 0;
+    color: red;
+    text-align: right;
+    font-size: .8rem;
+    color: white;
+}
+
+.svg{
+    position: absolute;
+    right: .75rem;
+    margin: 0 auto;
+    display: none;
+}
+
+
+/* media queries */
+
+@media all and (min-width: 1000px) {
+    main{
+        display: flex;
+        align-items: center;
+        margin-inline: 5rem;
+        height: 100vh;
+    }
+
+    h1{
+        font-size: 4rem;
+        text-align: left;
+        line-height: 4.25rem;
+    }
+
+    .p-heading{
+        text-align: left;
+        font-size: 1.25rem;
+    }
+
+    form{
+        width: 30vw;
+    }
+}
+
+
+
+.color{
+    color: hsl(0, 100%, 74%); 
+    color: hsl(154, 59%, 51%);
+    color: hsl(248, 32%, 49%);
+    color: hsl(249, 10%, 26%);
+    color: hsl(246, 25%, 77%);
+}

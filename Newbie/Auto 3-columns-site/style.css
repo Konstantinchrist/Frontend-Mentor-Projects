@@ -1,0 +1,97 @@
+body{
+    display: flex;
+    align-items: center;
+  }
+
+  main{
+    max-width: 90vw;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  h1{
+    font-weight: 700;
+    color: hsl(0, 0%, 95%);
+    font-size: 3rem;
+  }
+
+  p{
+    font-size: 18px;
+    line-height: 25px;
+    color: hsla(0, 0%, 100%, 0.75);
+    font-family: 'Fraunces', serif;
+    margin-bottom: 3rem;
+  }
+
+  div{
+    padding: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+  }
+
+  .sedan-div button{
+    color: hsl(31, 77%, 52%);
+  }
+
+  .SUV-div button{
+    color: hsl(184, 100%, 22%);
+  }
+
+  .luxury-div button{
+    color: hsl(179, 100%, 13%);
+  }
+
+  button{
+    margin-top: 3rem;
+    background-color: hsl(0, 0%, 95%);
+    padding: 1rem;
+    border-radius: 25px;
+    border: none;
+    width: 80%;
+    font-size: 1rem;
+    transition: color padding border 150ms;
+  }
+
+  button:hover{
+    color: white;
+    background: none;
+    padding: .9rem;
+    border: .1rem solid white;
+  }
+
+  .sedan-div{
+    background-color: hsl(31, 77%, 52%);
+  }
+
+  .SUV-div{
+    background-color: hsl(184, 100%, 22%);
+  }
+
+  .luxury-div{
+    background-color: hsl(179, 100%, 13%);
+  }
+
+
+  @media all and (min-width: 1000px) {
+    main{
+      max-width: 80vw;
+      display: flex;
+    }
+
+    body{
+      height: 100vh;
+    }
+
+    div{
+      min-height: 60vh;
+    }
+
+    button{
+      width: 60%;
+      position: absolute;
+      left: 3rem;
+      bottom: 3rem;
+    }
+
+  }

@@ -1,0 +1,306 @@
+body{
+    margin: 0;
+    position: relative;
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+
+picture{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+main{
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+img{
+    width: 100%;
+}
+/* header */
+
+header{
+    text-align: center;
+}
+
+h1{
+    color: hsl(210, 10%, 33%);
+}
+
+p{
+    color: hsl(201, 11%, 66%);
+}
+
+.logo-header{
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.buttons{
+    margin-top: 4rem;
+}
+
+button:hover{
+    opacity: .75;
+}
+
+button{
+    font-size: 1.25rem;
+    color: white;
+    padding: .75rem;
+    text-align: center;
+    border: none;
+    width: 100%;
+    border-radius: 30px;
+    font-family: 'Bai Jamjuree', sans-serif;
+    box-shadow: 1px 2px hsl(210, 10%, 33%);
+    margin: .5rem;
+}
+
+.ios-btn{
+    background-color: hsl(171, 66%, 44%);
+}
+
+.mac-btn{
+    background-color: hsl(233, 100%, 69%);
+}
+
+
+@media all and (min-width: 1200px) {
+    .buttons{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: 4rem;
+        gap: 1rem;
+        width: 60%;
+    }
+
+    button{
+        width: max-content;
+        padding: 1rem;
+    }
+}
+
+/*section */
+
+section{
+    text-align: center;
+    margin-top: 7.5rem; 
+}
+
+.section-text{
+    padding: 1rem;
+    padding-top: 2rem;
+}
+
+.section-main-text{
+    padding-bottom: 1.5rem;
+}
+
+/* section-1 */
+
+@media all and (min-width: 1200px) {
+    .section-1-flex-container{
+        display: flex;
+        justify-content: space-between;
+        bottom: 0;
+        align-items: center;
+        margin: 2rem;
+        padding: 1rem;
+        margin-left: -10%;
+        text-align: left;
+        padding-right: 6rem;
+    }
+
+    .computer-img{
+        width: 50%;
+    }
+}
+
+/* section-2 */
+
+.section-2-icon{
+    width: 10%;
+}
+
+@media all and (min-width: 1200px) {
+    .create-stuff{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem;
+        padding-inline: 4rem;
+        padding: 2rem;
+    }
+
+    .double-screen{
+        width: 80%;
+    }
+}
+
+/* section-3 */
+
+.section-3{
+    display: flex;
+    flex-direction: column;
+}
+
+.section-3-img{
+    width: 30%;
+    padding: 1.5rem;
+    margin: 0 auto;
+}
+
+@media all and (min-width: 1200px) {
+    .section-3{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+        padding-inline: 2rem;
+    }
+
+    .section-3-img{
+        width: 10%;
+        height: 10%;
+    }
+}
+/* footer */
+
+footer{
+    background-color: hsla(200, 7%, 58%, 0.178);
+    padding: 1.5rem;
+    margin-top: 10rem;
+}
+
+.logo-footer{
+    margin: 0 auto;
+    width: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 1rem;
+}
+
+a{
+    margin: .25rem;
+    color: hsl(210, 10%, 33%);
+    text-decoration: none;
+    transition: color 150ms;
+}
+
+a:hover{
+    color: hsl(171, 66%, 44%);
+}
+
+.socials{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+    margin-top: 4rem;
+    align-items: center;
+}
+
+.socials img{
+    width: 2rem;
+    height: 2rem;
+}
+
+
+
+@media all and (min-width: 1200px) {
+    footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 4rem;
+    }
+
+    .logo-links{
+        display: flex;
+        align-items: center;
+    }
+
+    .links{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-left: 4rem;
+    }
+
+    .logo-footer{
+        height: 3rem;
+        width: 3rem;
+    }
+
+    a{
+        margin-inline: 1rem;
+        text-align: left;
+    }
+
+    .socials{
+        margin-top: 1rem;
+    }
+
+    .socials img{
+        margin: .5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.lescoleurs{
+    color: hsl(171, 66%, 44%);
+    color: hsl(233, 100%, 69%);
+    color: hsl(210, 10%, 33%);
+    color: hsl(201, 11%, 66%);
+}

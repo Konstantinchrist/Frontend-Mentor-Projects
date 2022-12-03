@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Big+Shoulders+Display&family=Fraunces:opsz,wght@9..144,500&family=Josefin+Sans:wght@100;300;400&family=Karla:ital,wght@0,300;1,200&family=Kumbh+Sans&family=League+Spartan:wght@100&family=Lexend+Deca:wght@300&family=Manrope:wght@300;500;700&family=Montserrat:wght@100&family=Open+Sans&family=Outfit:wght@100;300&family=Overpass:wght@100;400;700&family=Poppins:wght@400;600&family=Raleway:wght@200&family=Red+Hat+Display&family=Rubik:wght@300;400;600;700&display=swap');
+
+body{
+    margin: 0;
+    position: relative;
+    font-family: 'Josefin Sans';
+}
+
+.background{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* main */
+
+.logo{
+    padding: 2rem;
+    width: 30%;
+}
+
+.hero-mobile{
+    width: 100%;
+}
+
+.hero-desktop{
+    display: none;
+}
+
+.text{
+    padding: 2rem;
+    text-align: center;
+}
+
+h1{
+    font-size: 3rem;
+    line-height: 3rem;
+    color: hsl(0, 6%, 24%);
+    font-weight: 500;
+    letter-spacing: .5rem;
+}
+
+i{
+    font-weight: 300;
+    color: hsl(0, 36%, 70%);
+    font-family: normal,'Josefin Sans';
+}
+
+p{
+    color: hsl(0, 36%, 70%);
+    line-height: 1.4rem;
+}
+
+/* input */
+
+.input-div{
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    margin-top: 4rem;
+    overflow: hidden;
+    display: flex;
+}
+
+.email-address{
+    color: hsl(0, 36%, 70%);
+    position: absolute;
+    left: 1rem;
+    top: 0 auto;
+    bottom: 0 auto;
+
+}
+.error{
+    display: none;
+    position: absolute;
+    right: 17.5%;
+    top: 50%;
+    transform: translateY(-50%);;
+}
+
+.arrow-button{
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    height: 100%;
+    border-radius: 2rem;
+    border: none;
+    width: 15%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+input{
+    height: 2.25rem;
+    border-radius: 2rem;
+    width: 100%;
+    border: 1px solid hsl(0, 36%, 70%);
+    color: hsl(0, 36%, 70%);
+    padding-left: 1rem;
+}
+
+.error-text{
+    margin: 0;
+    padding-top: .5rem;
+    padding-left: 1rem;
+    color: white;
+}
+
+::placeholder { 
+    color: hsl(0, 36%, 70%);
+    opacity: 1; 
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+  }
+  
+  :-ms-input-placeholder { 
+    font-family: 'Josefin Sans', sans-serif;
+    color: hsl(0, 36%, 70%);
+    font-size: 1rem;
+    }
+  
+  ::-ms-input-placeholder { 
+    color: hsl(0, 36%, 70%);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+  }
+
+@media all and (min-width: 1200px) {
+    .hero-mobile{
+        display: none;
+    }
+
+    .hero-desktop{
+        display: block;
+        width: 40%;
+        object-fit: cover;
+    }
+
+    main{
+        display: flex;
+        height: 100vh;
+        justify-content: space-between;
+        width: 100vw;
+    }
+
+    .text{
+        text-align: left;
+        padding-inline: 8rem;
+        max-width: 600px;
+    }
+
+    h1{
+        line-height: 5rem;
+        font-size: 4.5rem;
+    }
+
+    p{
+        font-size: 1.15rem;
+        line-height: 1.75rem;
+    }
+
+    input{
+        height: 3rem;
+    }
+
+    .background{
+        display: block;
+    }
+
+    .logo{
+        padding-left: 8rem;
+        padding-top: 4rem;
+        width: 20%;
+    }
+}

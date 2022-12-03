@@ -1,0 +1,196 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(27, 66%, 92%);
+    font-family: 'DM Sans', sans-serif;
+}
+
+main{
+    padding: 5%;
+    width: 90%;
+    max-width: 500px;
+}
+
+section{
+    padding: 1.5rem;
+    border-radius: 1rem;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 5px 5px 5px lightgray;
+}
+
+/* section 1 */
+
+section:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: hsl(10, 79%, 65%);
+    color: white;
+}
+
+.my-balance{
+    font-size: 1rem;
+    margin: 0;
+}
+
+.my-balance-value{
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin: 0;
+    margin-top: .5rem;
+}
+
+/* section 2 */
+
+section:nth-child(2){
+    background-color: white;
+    margin-top: 1rem;
+}
+
+h1{
+    margin: 0;
+    margin-top: .5rem;
+    font-size: 1.5rem;
+}
+
+/* chart start */
+
+.chart{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: .4rem;
+    width: 100%;
+    min-height: 17.5rem;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    align-items: flex-end;
+}
+
+.chart div{
+    border-radius: 5px;
+    position: relative;
+}
+
+.mon{
+    height: calc(17.45*1.5%);
+}
+
+.tue{
+    height: calc(34.91*1.5%);
+}
+
+.wed{
+    height: calc(52.36*1.5%);
+    background-color: hsl(186, 34%, 60%);
+}
+
+.thu{
+    height: calc(31.07*1.5%);
+}
+
+.fri{
+    height: calc(23.39*1.5%);
+}
+
+.sat{
+    height: calc(43.28*1.5%);
+}
+
+.sun{
+    height: calc(25.48*1.5%);
+}
+
+.mon,
+.tue,
+.thu,
+.fri,
+.sat,
+.sun{
+    background-color: hsl(10, 79%, 65%);
+}
+
+
+
+.mon::after,
+.tue::after,
+.wed::after,
+.thu::after,
+.fri::after,
+.sat::after,
+.sun::after
+{
+    content: attr(data-day);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    bottom: -1.25rem;
+}
+
+
+/* chart end */
+
+.conclusion{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: flex-end;
+    padding-top: .5rem;
+}
+
+.conclusion::before{
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: hsl(28, 10%, 53%);
+    top: 0;
+    left: 0;
+    content: '';
+}
+
+.total-month{
+    color: hsl(28, 10%, 53%);
+    margin-bottom: 0;
+}
+
+.total-month-value{
+    font-size: 2rem;
+    margin: .25rem;
+    margin-inline: 0;
+    font-weight: 700;
+    color: hsl(25, 47%, 15%);
+}
+
+.last-month-div{
+    text-align: right;
+    margin-bottom: .25rem;
+}
+
+.last-month{
+    color: hsl(28, 10%, 53%);
+    margin: 0;
+}
+
+.last-month-value{
+    color: hsl(25, 47%, 15%);
+    font-size: 1rem;
+    margin: .25rem;
+    margin-inline: 0;
+    font-weight: 700;
+}
+
+
+
+.colors{
+    color: hsl(10, 79%, 65%);
+    color: hsl(186, 34%, 60%);
+    color: hsl(25, 47%, 15%);
+    color: hsl(28, 10%, 53%);
+    color: hsl(27, 66%, 92%);
+    color: hsl(33, 100%, 98%);
+}

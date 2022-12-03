@@ -1,0 +1,193 @@
+body{
+    margin: 0;
+    font-family: 'League Spartan', sans-serif;
+}
+
+main{
+    padding: 2rem;
+}
+
+/* section 1 */
+
+/* heading */
+
+.heading{
+    text-align: center;
+    font-weight: bold;
+}
+
+h1{
+    font-size: 2.5rem;
+    color: hsl(300, 43%, 22%);
+}
+
+.heading-p{
+    font-weight: 100;
+}
+
+/* ratings */
+
+.rating-1, .rating-2, .rating-3{
+    background-color: hsla(302, 10%, 53%, 0.315);
+    border-radius: 5px;
+    margin-top: .5rem;
+    text-align: center;
+    padding: .2rem;
+    padding-inline: 3rem;
+}
+
+.rating-p{
+    margin-top: .2rem;
+    color: hsl(300, 43%, 22%);
+    font-weight: 600;
+}
+
+svg{
+    margin-inline: .1rem;
+}
+
+section:nth-child(1){
+    padding-bottom: 2rem;
+}
+
+.stars{
+    height: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* section 2*/
+
+article{
+    padding: 1rem;
+    background-color: hsl(300, 43%, 22%);
+    border-radius: 10px;
+    margin-top: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+/* comment */
+
+/* creator */
+
+.creator{
+    display: flex;
+    align-items: center;
+}
+
+img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+h2{
+    margin: 0;
+    font-size: .9rem; 
+}
+
+.creator-p{
+    margin: 0;
+    font-size: .9rem; 
+    font-weight: 100;
+    margin-top: .2rem;
+    color: rgba(255, 255, 255, 0.548);
+}
+
+/* text */
+
+.comment-text{
+    line-height: 1.2rem;
+    font-weight: thin;
+}
+
+/* media queries */
+
+@media all and (min-width: 1200px) {
+    main{
+        padding-inline: 5rem;
+    }
+
+    section:nth-child(1){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40vh;
+    }
+
+    .heading{
+        text-align: left;
+        width: 40%;
+    }
+
+    h1{
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .rating{
+        width: 30rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .rating-1{
+        margin-right: 5rem;
+        margin-left: 0;
+    }
+
+    .rating-2{
+        margin-right: 3.5rem;
+        margin-left: 1.5rem;
+    }
+
+    .rating-3{
+        margin-right: 2rem;
+        margin-left: 2.5rem;
+    }
+
+    .rating-1, .rating-2, .rating-3{
+        display: flex;
+        width: 25rem;
+        justify-content: space-evenly;
+        align-items: center;
+        min-height: 30px;
+        padding: .5rem;
+    }
+
+    .rating-p{
+        margin: 0;
+    }
+
+    .stars{
+        width: 50%;
+    }
+
+
+    section:nth-child(2){
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    article{
+        height: 12rem;
+        margin: 1rem;
+        padding: 2rem;
+    }
+
+    article:nth-child(1){
+        margin-top: 1rem;
+    }
+
+    article:nth-child(2){
+        margin-top: 3rem;
+    }
+
+    article:nth-child(3){
+        margin-top: 5rem;   
+    }
+}
+

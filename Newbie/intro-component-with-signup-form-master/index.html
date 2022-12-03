@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&family=Fraunces:opsz,wght@9..144,500&family=Karla:ital,wght@0,300;1,200&family=Kumbh+Sans&family=League+Spartan:wght@100&family=Lexend+Deca:wght@300&family=Montserrat:wght@100&family=Outfit:wght@100;300&family=Poppins:wght@200;600&family=Raleway:wght@200&family=Red+Hat+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+  <picture class="picture">
+    <source media="(min-width: 500px)" srcset="assets/bg-intro-desktop.png">
+    <img src="assets/bg-intro-mobile.png" alt="background">
+  </picture>
+
+  <main>
+    <section class="heading">
+      <h1>Learn to code by watching others</h1>
+      <p class="p-heading">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+        but understanding how developers think is invaluable. </p>
+    </section>
+
+    <section class="form-section">
+      <div class="special-offer">
+        <h2><b>Try it free 7 days</b> then $20/mo. thereafter</h2>
+      </div>
+
+      <form>
+        <label>
+          <input type="text" name="firstname" id="firstname" placeholder="First Name" autocomplete="off">
+          <svg id="svg-firstname" class="svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+        </label>
+        <p id="error-firstname" class="input-error">Firstname can't be empty</p>
+        <label>
+          <input type="text" name="lastname" id="lastname" placeholder="Last Name" autocomplete="off">
+          <svg id="svg-lastname" class="svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+        </label>
+        <p id="error-lastname" class="input-error">Lastname can't be empty</p>
+        <label>
+          <input type="email" name="email" id="email" placeholder="Email Address" autocomplete="off">
+          <svg id="svg-email" class="svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+        </label>
+        <p id="error-email" class="input-error">Email can't be empty</p>
+        <label>
+          <input type="password" name="password" id="password" placeholder="Password" autocomplete="off">
+          <svg id="svg-password" class="svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+        </label>
+        <p id="error-password" class="input-error">Password can't be empty</p>
+        <button type="button" id="submit-button">CLAIM YOUR FREE TRIAL</button>
+        <p class="p-form">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></p>
+      </form>
+    </section>
+  </main>
+</body>
+<script defer src="script.js"></script>
+</html>

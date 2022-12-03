@@ -1,0 +1,128 @@
+html {
+    box-sizing: border-box;
+}
+  
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    background-color: hsl(225, 100%, 94%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+/* main */
+
+main{
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    width: 80%;
+}
+
+p{
+    text-align: center;
+    color: hsl(224, 23%, 55%);
+}
+
+h1{
+    text-align: center;
+    color: hsl(223, 47%, 23%);
+}
+
+.content{
+    padding: 1rem;
+    margin: 0;
+    padding-top: .3rem;
+}
+
+/* main change-annual-plan */
+
+.change-annual-plan{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background-color: hsl(225, 100%, 98%);
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+h2{
+    margin: 0;
+    color: hsl(223, 47%, 23%);
+    font-size: 1rem;
+}
+
+.change-annual-plan p{
+    margin-top: .1rem;
+    margin-bottom: .1rem;
+}
+
+a{
+    color: hsl(245, 75%, 52%);
+}
+
+/* main button */
+
+button{
+    margin-top: .5rem;
+    color: hsl(224, 23%, 55%);
+    font-size: 1.5rem;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 1rem;
+    background: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+/* main button cancel */
+
+.cancel{
+    transition: background-color 150ms;
+}
+
+.cancel:hover{
+    background-color: hsl(225, 100%, 94%);
+    color: hsl(245, 75%, 52%);
+}
+
+/* main button proceed-to-payment */
+
+.proceed-to-payment{
+    background-color: hsl(245, 75%, 52%);
+    color: white;
+    transition: opacity 150ms;
+}
+
+.proceed-to-payment:hover{
+    opacity: .8;
+}
+
+
+
+/* media queries */
+
+@media all and (min-width: 850px) {
+    .content{
+        padding: 3rem;
+    }
+
+    main{
+        width: 40%;
+    }
+}

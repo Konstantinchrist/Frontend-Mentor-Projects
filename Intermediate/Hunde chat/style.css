@@ -1,0 +1,253 @@
+body{
+    margin: 0;
+    width: 100vw;
+    font-family: 'Rubik', sans-serif;
+    position: relative;
+}
+
+.background{
+    height: 100vh;
+    position: absolute;
+    width: 100vw;
+    border-radius: 50px;
+    z-index: -1;
+}
+
+.background-1{
+    background: linear-gradient(180deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+    top: -30vh;
+    left: -50%;
+}
+
+.background-2{
+    background-color: hsla(206, 7%, 79%, 0.315);
+    bottom: -30vh;
+    right: -50%;
+}
+
+/* phone / section 1 */ 
+
+.phone{
+    width: 80vw;
+    border: 15px solid white;
+    border-radius: 30px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    overflow: hidden;
+    background-color: hsl(270, 20%, 96%);
+    max-width: 375px;
+    min-width: 300px;
+    box-shadow: 2px 2px 2px 2px hsl(206, 6%, 79%);
+}
+
+/* contact */
+
+.contact{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+    padding: .5rem;
+    padding-top: 3rem;
+    padding-inline: 5%;
+    color: #FFF;
+    border-radius: 20px;
+    position: relative;
+}
+
+.avatar{
+    width: 10%;
+    margin-inline: .5rem;
+    border-radius: 50%;
+    border: 1px solid white;
+    padding: .1rem;
+}
+
+.person{
+    display: flex;
+    align-items: center;
+}
+
+.avatar-h{
+    margin: .1rem;
+}
+
+.avatar-p{
+    font-size: .75rem;
+    margin: .1rem;
+}
+
+/* notch */
+
+.notch{
+    background-color: white;
+    width: 80%;
+    height: 2.5rem;
+    position: absolute;
+    top: -1rem;
+    left: 10%;
+    border-radius: 20px;
+}
+
+
+/* chat */
+
+.chat p{
+    font-size: .8rem;
+}
+
+/* messages */
+
+.message-1{
+    color: hsl(276, 55%, 52%);
+    background-color: rgb(233, 233, 233);
+    margin: .5rem;
+    margin-top: .75rem;
+    max-width: 60%;
+    border-radius: 15px;
+    padding: .5rem;
+}
+
+.message-2{
+    color: hsl(271, 15%, 43%);
+    background-color: white;
+    margin: .5rem;
+    margin-top: .75rem;
+    width: 60%;
+    border-radius: 15px;
+    margin-left: auto;
+    padding: .5rem;
+}
+
+.special{
+    width: max-content;
+}
+
+.pictures{
+    display: flex;
+    max-width: 70%;
+    margin: .5rem;
+    margin-top: .75rem;
+    margin-left: auto;
+}
+
+.pictures img{
+    width: 30%;
+    border-radius: 15px;
+    padding: .25rem;
+}
+
+/* offer */
+
+.offer{
+    color: white;
+    margin: .5rem;
+    margin-top: .75rem;
+    max-width: 60%;
+    border-radius: 15px;
+    padding: .5rem;
+    background: linear-gradient(90deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.time-i{
+    display: flex;
+    align-items: center;
+}
+
+.time{
+    font-size: .8rem;
+    margin-left: .4rem;
+}
+
+.price{
+    margin: 0;
+    font-weight: 700;
+}
+
+/* type a message */
+
+.type-message{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: .5rem;
+    margin-top: .75rem;
+    border-radius: 20px;
+    padding: .5rem;
+    background-color: white;
+}
+
+.type-message p{
+    margin: .2rem;
+}
+
+.type-message i{
+    background-color: black;
+    border-radius: 50%;
+    padding: .5rem;
+    object-fit: cover;
+    color: #FFF;
+}
+
+
+
+/* section 2 */
+
+section:nth-child(2){
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+h1{
+    font-size: 2.5rem;
+    color: hsl(271, 36%, 24%);
+}
+
+section:nth-child(2) p{
+    line-height: 1.6rem;
+    color: hsl(270, 7%, 64%);
+}
+
+
+/* media queries */
+
+@media all and (min-width: 1200px) {
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: 60%;
+        height: min-content;
+    }
+
+    section:nth-child(2){
+        margin-left: 4rem;
+        text-align: left;
+    }
+
+    .background{
+        width: 40vw;
+        height: 200vh;
+        border-radius: 300px;
+    }
+
+    .background-1{
+        top: -120vh;
+        left: -10%;
+    }
+
+    .background-2{
+        bottom: -140vh;
+        right: -10%;
+    }
+
+}
