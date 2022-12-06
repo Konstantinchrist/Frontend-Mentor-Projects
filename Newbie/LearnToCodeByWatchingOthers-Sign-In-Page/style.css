@@ -98,8 +98,6 @@ a{
 
 label{
     position: relative;
-    display: flex;
-    align-items: center;
 }
 
 .input-error{
@@ -111,10 +109,11 @@ label{
 }
 
 .svg{
-    position: absolute;
     right: .75rem;
-    margin: 0 auto;
+    position: absolute;
     display: none;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
