@@ -48,6 +48,7 @@ i{
     font-weight: 300;
     color: hsl(0, 36%, 70%);
     font-family: normal,'Josefin Sans';
+    font-style: normal;
 }
 
 p{
@@ -107,7 +108,8 @@ input{
     margin: 0;
     padding-top: .5rem;
     padding-left: 1rem;
-    color: white;
+    color: red;
+    display: none;
 }
 
 ::placeholder { 

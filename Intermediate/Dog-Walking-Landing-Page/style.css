@@ -3,6 +3,8 @@ body{
     width: 100vw;
     font-family: 'Rubik', sans-serif;
     position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .background{
@@ -35,8 +37,8 @@ body{
     margin-top: 4rem;
     overflow: hidden;
     background-color: hsl(270, 20%, 96%);
-    max-width: 375px;
-    min-width: 300px;
+    min-width: 325px;
+    max-width: 325px;
     box-shadow: 2px 2px 2px 2px hsl(206, 6%, 79%);
 }
 

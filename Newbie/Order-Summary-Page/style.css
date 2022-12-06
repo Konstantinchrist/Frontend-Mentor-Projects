@@ -27,6 +27,7 @@ main{
     overflow: hidden;
     background-color: white;
     width: 80%;
+    max-width: 500px;
 }
 
 p{

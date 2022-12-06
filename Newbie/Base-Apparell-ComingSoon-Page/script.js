@@ -8,7 +8,7 @@ const errorMessage1 = document.getElementById('error-message-1')
 
 function reset () {
     input.style.border='1px solid black'
-    errorMessage1.style.color='white'
+    errorMessage1.style.display='none'
     console.log('reset')
 }
 
@@ -21,7 +21,7 @@ submitButton.addEventListener('click', () => {
         reset()
         input.style.border='1px solid red'
         error.style.display='block'
-        errorMessage1.style.color='red'
+        errorMessage1.style.display='block'
         console.log('not valid')
     }
 })

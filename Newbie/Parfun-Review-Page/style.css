@@ -8,9 +8,10 @@ body{
 
   section{
     border-radius: 10px;
-    width: 325px;
+    width: 90%;
     background-color: white;
     overflow: hidden;
+    max-width: 600px;
   }
 
   picture{
@@ -58,6 +59,7 @@ body{
 
   h4{
     text-decoration-line: line-through;
+    color: hsl(228, 12%, 48%);
   }
 
   h5{
@@ -93,10 +95,8 @@ body{
   }
 
 
-  @media all and (min-width: 1400px) {
+  @media all and (min-width: 800px) {
     section{
       display: flex;
-      min-width: 40%;
-      height: fit-content;
     }
   }

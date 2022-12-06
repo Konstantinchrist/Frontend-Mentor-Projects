@@ -21,6 +21,7 @@ main{
 i{
     color: hsla(277, 63%, 47%, 0.986);
     font-family: 'Lexend Deca', sans-serif;
+    font-style: normal;
 }
 
 .text{
@@ -103,6 +104,7 @@ img{
 
     .text{
         padding: 4rem;
+        width: 50%;
     }
 }
 
