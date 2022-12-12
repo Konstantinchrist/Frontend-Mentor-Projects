@@ -190,9 +190,9 @@ nextStep.addEventListener('click', () => {
     }
 
     if (step == 1){
-        if (! inputName.value == '' || inputName.value == 'x'){ // detect for invalid name
-            if (inputEmail.value.match(patternEmail) || inputEmail.value == 'y'){ // detect for invalid email
-                if (inputPhone.value.match(patternPhone) || inputPhone.value == 'z'){ // detect for invlaid phone number
+        if (! inputName.value == ''){ // detect for invalid name
+            if (inputEmail.value.match(patternEmail)){ // detect for invalid email
+                if (inputPhone.value.match(patternPhone)){ // detect for invlaid phone number
                     if (step < 5){ // detect for too high step number
                         step = step + 1;
                     }
