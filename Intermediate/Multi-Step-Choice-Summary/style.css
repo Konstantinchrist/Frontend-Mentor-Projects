@@ -8,7 +8,6 @@ body{
 }
 
 /* sidebar */
-
 .sidebar{
     width: 100%;
     position: relative;
@@ -42,12 +41,11 @@ body{
     width: 60%;
 }
 
-.sidebar-specific{
+.sidebar-text{
     display: none;
 }
 
 /* main */ 
-
 .main-section{
     margin: 1rem;
     position: absolute;
@@ -60,7 +58,6 @@ body{
 }
 
 /* window 1 */
-
 label{
     margin-top: 15rem;
     font-size: .9rem;
@@ -97,8 +94,6 @@ form p{
 }
 
 /* window 2*/
-
-
 .option{
     display: flex;
     gap: 1rem;
@@ -108,7 +103,7 @@ form p{
     padding: 1rem;
 }
 
-.option h2,p{
+.option h2, p{
     margin: 0;
 }
 
@@ -119,10 +114,6 @@ h2{
 .option div p{
     color: hsl(231, 11%, 63%);
     font-size: .8rem;
-}
-
-.two-months-free{
-    display: none;
 }
 
 /* window-3 */
@@ -194,6 +185,10 @@ h2{
     margin: 0;
 }
 
+.mode-summary-a:hover{
+    cursor: pointer;
+}
+
 .mode-summary::after{
     content: '';
     position: absolute;
@@ -226,7 +221,7 @@ h2{
 }
 
 .window-5 p{
-    line-height: 1.4rem;
+    line-height: 1.8rem;
     color: hsl(231, 11%, 63%);
 }
 
@@ -275,21 +270,17 @@ button{
         margin-top: 2rem;
         gap: 1rem;
     }
-
     .option-w2{
         display: block;
         width: 30%;
     }
-
     .option-info{
         margin-top: 3rem;
     }
-
     .sidebar{
         width: 30%;
         position: relative;
     }
-
     .sidebar-steps{
         flex-direction: column;
         height: max-content;
@@ -297,36 +288,31 @@ button{
         left: 3rem;
         top: 3rem;
     }
-
-    .sidebar-steps-specific{
+    .sidebar-texts{
         position: absolute;
         top: 3rem;
         left: 6rem;
         gap: 1.7rem;
         display: flex;
         flex-direction: column-reverse;
+        width: fit-content;
     }
-
-    .sidebar-specific{
+    .sidebar-text{
         display: block;
         color: white;
     }
-
-    .sidebar-specific p:nth-child(2){
+    .sidebar-text p:nth-child(2){
         font-weight: 700;
     }
-
     main{
         position: relative;
         width: 70%;
     }
-
     .navigation{
         width: 80%;
         position: absolute;
         bottom: 1rem;
     }
-
     .main-section{
         position: relative;
         width: 80%;
@@ -334,7 +320,6 @@ button{
         top: 0;
 
     }
-
     body{
         height: fit-content;
         display: flex;
@@ -346,7 +331,6 @@ button{
         background-color: white;
         box-shadow: 1px 1px 5px hsl(206, 94%, 87%);
     }
-
     html{
         background-color: hsl(217, 100%, 97%);
     }

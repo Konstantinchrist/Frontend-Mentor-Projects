@@ -16,7 +16,7 @@
       <source media="(min-width: 600px)" srcset="assets/images/bg-sidebar-desktop.svg">
       <img src="assets/images/bg-sidebar-mobile.svg" alt="background-sidebar">
     </picture>
-    
+
     <div class="sidebar-steps">
       <p id="step-1" class="sidebar-step-number">1</p>
       <p id="step-2" class="sidebar-step-number">2</p>
@@ -24,23 +24,23 @@
       <p id="step-4" class="sidebar-step-number">4</p>
     </div>
 
-    <div class="sidebar-steps-specific">
-      <div class="sidebar-specific">
+    <div class="sidebar-texts">
+      <div class="sidebar-text">
         <p>Step 4</p>
         <p>Summary</p>
       </div>
 
-      <div class="sidebar-specific">
+      <div class="sidebar-text">
         <p>Step 3</p>
         <p>Add-ons</p>
       </div>
 
-      <div class="sidebar-specific">
+      <div class="sidebar-text">
         <p>Step 2</p>
         <p>Select plan</p>
       </div>
 
-      <div class="sidebar-specific">
+      <div class="sidebar-text">
         <p>Step 1</p>
         <p>Your info</p>
       </div>
@@ -52,15 +52,18 @@
       <section id="window-1" class="window-1 window">
         <h1>Personal info</h1>
         <p class="window-1-p">Please provide your name, email address, and phone number.</p>
+
         <form>
           <label for="name">Name</label>
           <input class="input" id="input-name" name="name" type="text" placeholder="e.g. Stephen King">
           <p id="error-name" class="error-message">Name isn't valid</p>
+
           <label for="email">Email Address</label>
           <input class="input" id="input-email" name="email" type="text" placeholder="e.g. stephenking@lorem.com">
           <p id="error-email" class="error-message">Email isn't valid</p>
+
           <label for="phone-number">Phone Number</label>
-          <input class="input" id="input-phone" name="phone-number" type="text" placeholder="e.g. +1 234 567 890">
+          <input class="input" id="input-phone" name="phone-number" type="text" placeholder="e.g. 123-456-7890">
           <p id="error-phone" class="error-message">Phone number isn't valid</p>
         </form>
       </section>
@@ -74,7 +77,6 @@
             <div class="option-info">
               <h2>Arcade</h2>
               <p>$9/mo</p>
-              <p class="two-months-free">2 months free</p>
             </div>
           </div>
           <div id="advanced" class="option-w2 option">
@@ -82,7 +84,6 @@
             <div class="option-info">
               <h2>Advanced</h2>
               <p>$12/mo</p>
-              <p class="two-months-free">2 months free</p>
             </div>
           </div>
           <div id="pro" class="option-w2 option">
@@ -90,7 +91,6 @@
             <div class="option-info">
               <h2>Pro</h2>
               <p>$15/mo</p>
-              <p class="two-months-free">2 months free</p>
             </div>
           </div>
         </div>
@@ -131,12 +131,9 @@
           <h1>Finishing up</h1>
           <p>Double-check everything looks OK before confirming.</p>
           <div class="summary">
-            <div class="mode-summary">
-              <div class="flex">
-                <h2 class="mode-summary-h2" id="mode"></h2>
-                <p id="mode-price-1"></p>
-              </div>
-              <a id="back-to-w2" class="mode-summary-a">Change</a>
+            <div class="flex mode-summary">
+              <h2 class="mode-summary-h2" id="mode"></h2>
+              <p id="mode-price-1"></p>
             </div>
             <div id="online-service-w4" class="option-w4 flex">
               <p>Online service</p>
@@ -155,6 +152,7 @@
             <p class="total-monthly">Total (monthly)</p>
             <h2 class="total-monthly-value" id="total-price-area">price</h2>
           </div>
+        </div>
         </section>
   
         <section id="window-5" class="window-5 window">
