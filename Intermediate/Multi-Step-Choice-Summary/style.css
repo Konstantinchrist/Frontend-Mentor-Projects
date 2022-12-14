@@ -105,6 +105,11 @@ form p{
     border: 1px solid hsl(231, 11%, 63%);
     border-radius: 5px;
     padding: 1rem;
+    transition: border-color 150ms;
+}
+
+.option:hover{
+    border-color: hsl(243, 100%, 62%);
 }
 
 .option h2, p{
@@ -252,6 +257,11 @@ button{
 .goBack-button{
     background: none;
     color: hsl(231, 11%, 63%);
+    transition: color 150ms;
+}
+
+.goBack-button:hover{
+    color: hsl(213, 96%, 18%);
 }
 
 .nextStep-button{
@@ -318,7 +328,7 @@ button{
         width: 70%;
     }
     .navigation{
-        width: calc(100% - 6rem);
+        width: 90%;
         position: absolute;
         bottom: 1rem;
         padding-left: 0;
@@ -326,16 +336,15 @@ button{
     }
     .main-section{
         position: relative;
-        width: 100%;
+        width: 90%;
         box-shadow: none;
         top: 0;
         margin-bottom: 0;
-        width: calc(100% - 4rem);
     }
     body{
         height: fit-content;
         display: flex;
-        max-width: 1000px;
+        max-width: 900px;
         margin: 0 auto;
         margin-top: 15vh;
         padding: 1rem;

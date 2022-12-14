@@ -66,7 +66,6 @@ let largerStorageOption = 0;
 let customProfileOption = 0;
 
 let totalPrice = 0;  
-
 // functions
 
 //reset functions
@@ -90,13 +89,13 @@ function resetWindow1(){
 
 //options window-2
 function resetOptionsW2(element){
-    element.style.border='1px solid hsl(231, 11%, 63%)'; element.style.background='none';
+    element.style.borderColor='black'; element.style.background='none';
     mode == 0;
 }
 
 //options window-3
 function resetOptionsW3(element){
-    element.style.border='1px solid black'; element.style.background='none';
+    element.style.borderColor='black'; element.style.background='none';
 }
 
 //choice window-4
@@ -219,7 +218,7 @@ function newStep (){
         resetAll();
         window1.style.display='block';
         number1.style.backgroundColor='white'; number1.style.color='black';
-        goBack.style.display='block'; nextStep.style.display='block'; 
+        nextStep.style.display='block'; goBack.style.display='block';
     } 
     if (step == 2) {
         resetAll();
@@ -272,19 +271,19 @@ nextStep.addEventListener('click', () => {
 //window 2 detect chosen optiopn and execute
 arcade.addEventListener('click', () => {
     optionsMode.forEach(resetOptionsW2);
-    arcade.style.border='1px solid black'; arcade.style.backgroundColor='hsl(231, 100%, 98%)';
+    arcade.style.borderColor='hsl(243, 100%, 62%)'; arcade.style.backgroundColor='hsl(231, 100%, 98%)';
     mode = 1;
     console.log('mode:' + mode);
 })
 advanced.addEventListener('click', () => {
     optionsMode.forEach(resetOptionsW2);
-    advanced.style.border='1px solid black'; advanced.style.backgroundColor='hsl(231, 100%, 98%)';
+    advanced.style.borderColor='hsl(243, 100%, 62%)'; advanced.style.backgroundColor='hsl(231, 100%, 98%)';
     mode = 2;   
     console.log('mode:' + mode);
 })
 pro.addEventListener('click', () => {
     optionsMode.forEach(resetOptionsW2);
-    pro.style.border='1px solid black'; pro.style.backgroundColor='hsl(231, 100%, 98%)';
+    pro.style.borderColor='hsl(243, 100%, 62%)'; pro.style.backgroundColor='hsl(231, 100%, 98%)';
     mode = 3;
     console.log('mode:' + mode);
 })
@@ -293,7 +292,7 @@ pro.addEventListener('click', () => {
 //window 3
 onlineService.addEventListener('click', () => {
     if (onlineServiceOption == 0){
-        onlineService.style.borderColor='black'; onlineService.style.backgroundColor='hsl(231, 100%, 98%)';
+        onlineService.style.borderColor='hsl(243, 100%, 62%)'; onlineService.style.backgroundColor='hsl(231, 100%, 98%)';
         onlineServiceOption = 1;
     }
     else if (onlineServiceOption == 1){
@@ -303,7 +302,7 @@ onlineService.addEventListener('click', () => {
 })
 largerStorage.addEventListener('click', () => {
     if (largerStorageOption == 0){
-        largerStorage.style.borderColor='black'; largerStorage.style.backgroundColor='hsl(231, 100%, 98%)';
+        largerStorage.style.borderColor='hsl(243, 100%, 62%)'; largerStorage.style.backgroundColor='hsl(231, 100%, 98%)';
         largerStorageOption = 1;
     }
     else if (largerStorageOption == 1){
@@ -313,7 +312,7 @@ largerStorage.addEventListener('click', () => {
 })
 customProfile.addEventListener('click', () => {
     if (customProfileOption == 0){
-        customProfile.style.borderColor='black'; customProfile.style.backgroundColor='hsl(231, 100%, 98%)';
+        customProfile.style.borderColor='hsl(243, 100%, 62%)'; customProfile.style.backgroundColor='hsl(231, 100%, 98%)';
         customProfileOption = 1;
     }
     else if (customProfileOption == 1){
