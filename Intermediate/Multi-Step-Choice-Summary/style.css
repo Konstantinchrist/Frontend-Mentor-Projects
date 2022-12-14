@@ -17,6 +17,10 @@ body{
     width: 100%;
 }
 
+.background-sidebar img{
+    width: 100vw;
+}
+
 .sidebar-step-number{
     height: 2.25rem;
     width: 2.25rem;
@@ -35,10 +39,9 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    top: .5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
+    top: 1rem;
+    left: 25%;
+    min-width: 50%;
 }
 
 .sidebar-text{
@@ -55,6 +58,7 @@ body{
     border-radius: 10px;
     box-shadow: 1px 1px 1px hsl(206, 94%, 87%);
     margin-bottom: 4rem;
+    width: calc(100% - 4rem);
 }
 
 /* window 1 */
@@ -263,7 +267,11 @@ button{
 }
 
 
-@media all and (min-width: 600px) {    
+@media all and (min-width: 900px) {    
+    .background-sidebar img{
+        width: fit-content;
+        overflow: hidden;
+    }
     .options-w2{
         display: flex;
         justify-content: space-evenly;
@@ -287,6 +295,7 @@ button{
         gap: 1.5rem;
         left: 3rem;
         top: 3rem;
+        min-width: 2.25rem;
     }
     .sidebar-texts{
         position: absolute;
@@ -309,23 +318,26 @@ button{
         width: 70%;
     }
     .navigation{
-        width: 80%;
+        width: calc(100% - 6rem);
         position: absolute;
         bottom: 1rem;
+        padding-left: 0;
+        left: 2rem  ;
     }
     .main-section{
         position: relative;
-        width: 80%;
+        width: 100%;
         box-shadow: none;
         top: 0;
-
+        margin-bottom: 0;
+        width: calc(100% - 4rem);
     }
     body{
         height: fit-content;
         display: flex;
-        max-width: 950px;
+        max-width: 1000px;
         margin: 0 auto;
-        margin-top: 5rem;
+        margin-top: 15vh;
         padding: 1rem;
         border-radius: 5px;
         background-color: white;

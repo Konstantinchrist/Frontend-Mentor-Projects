@@ -76,6 +76,10 @@ h1{
     position: relative;
 }
 
+.chart-div{
+    flex-direction: column;
+}
+
 .mon{
     height: calc(17.45*1.5%);
 }
@@ -114,23 +118,6 @@ h1{
     background-color: hsl(10, 79%, 65%);
 }
 
-
-
-.mon::after,
-.tue::after,
-.wed::after,
-.thu::after,
-.fri::after,
-.sat::after,
-.sun::after
-{
-    content: attr(data-day);
-    position: absolute;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    bottom: -1.25rem;
-}
 
 
 /* chart end */
