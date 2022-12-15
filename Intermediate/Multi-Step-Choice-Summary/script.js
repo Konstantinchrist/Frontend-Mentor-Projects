@@ -13,7 +13,7 @@ const inputs = Array.from(document.getElementsByClassName('input'));
 
 //patterns
 const patternEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-const patternPhone = /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/;
+const patternPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
 //buttons 
 const goBack = document.getElementById('goBack');

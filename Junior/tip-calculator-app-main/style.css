@@ -53,14 +53,23 @@ input:hover{
 
 ::-webkit-input-placeholder { /* Edge */
     font-family: 'Space Mono', sans-serif;
+    color: hsl(183, 100%, 15%);
+    font-size: 1.25rem;
+    text-align: right;
   }
   
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
     font-family: 'Space Mono', sans-serif;
+    color: hsl(183, 100%, 15%);
+    font-size: 1.25rem;
+    text-align: right;
   }
   
   ::placeholder {
     font-family: 'Space Mono', sans-serif;
+    color: hsl(183, 100%, 15%);
+    font-size: 1.25rem;
+    text-align: right;
   }
 
 /* tip options */
@@ -85,12 +94,8 @@ input:hover{
     font-family: 'Space Mono', sans-serif;
 }
 
-.tip-options button:hover, .button:hover{
+/* .tip-options button:hover, */ .button:hover{
     background-color: hsla(172, 56%, 54%, 0.767);
-}
-
-.tip-options button:focus{
-    background-color: hsl(172, 67%, 45%);
 }
 
 .tip-options input{
@@ -98,13 +103,6 @@ input:hover{
     padding: .5rem;
     width: 90%;
 }
-
-::placeholder{
-    color: hsl(183, 100%, 15%);
-    font-size: 1.25rem;
-    text-align: right;
-}
-
 
 .people-div div:nth-child(1){
     display: flex;
