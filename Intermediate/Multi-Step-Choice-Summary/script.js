@@ -177,7 +177,7 @@ nextStep.addEventListener('click', () => {
                 step = step + 1;
             }
         }
-        priceArea.innerHTML=('$'+totalPrice+'/mo')
+        priceArea.innerHTML=('$' + totalPrice + '/mo')
     }
 
     if (step == 2){
