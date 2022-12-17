@@ -94,7 +94,7 @@ input:hover{
     font-family: 'Space Mono', sans-serif;
 }
 
-/* .tip-options button:hover, */ .button:hover{
+.tip-options button:hover,  .button:hover{
     background-color: hsla(172, 56%, 54%, 0.767);
 }
 
@@ -167,6 +167,7 @@ section:nth-child(2) div p:nth-child(2){
     bottom: 1.5rem;
     left: 1.5rem;
     right: 1.5rem;
+    font-family: 'Space Mono', sans-serif;
 }
 
 @media all and (min-width: 1000px) {
@@ -175,7 +176,11 @@ section:nth-child(2) div p:nth-child(2){
         gap: 1.5rem;
         width: 100%;
         padding: 1.5rem;
-        margin-top: 15%;
+        margin-top: 10%;
+    }
+
+    .logo{
+        margin-top: 4rem;
     }
 
     section{
