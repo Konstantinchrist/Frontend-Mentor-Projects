@@ -59,11 +59,12 @@ const stepNumbers = Array.from(document.getElementsByClassName('sidebar-step-num
 
 //counters
 let step = 1;
-let mode = 0;
+let mode = 1;
+arcade.style.borderColor='hsl(243, 100%, 62%)'; arcade.style.backgroundColor='hsl(231, 100%, 98%)';
 
-let onlineServiceOption = 0;
-let largerStorageOption = 0;
-let customProfileOption = 0;
+let onlineServiceOption = false;
+let largerStorageOption = false;
+let customProfileOption = false;
 
 let totalPrice = 0;  
 // functions
@@ -90,7 +91,6 @@ function resetWindow1(){
 //options window-2
 function resetOptionsW2(element){
     element.style.borderColor='black'; element.style.background='none';
-    mode == 0;
 }
 
 //options window-3
@@ -143,15 +143,15 @@ goBack.addEventListener('click', () => {
 nextStep.addEventListener('click', () => {
     if (step == 3){
         resetChoice();
-        if (onlineServiceOption == 1){//detect for choice of addons
+        if (onlineServiceOption == true){//detect for choice of addons
             onlineServiceW4.style.display='flex';
             totalPrice = totalPrice + 1;
         }
-        if (largerStorageOption == 1){//detect for choice of addons
+        if (largerStorageOption == true){//detect for choice of addons
             largerStorageW4.style.display='flex';
             totalPrice = totalPrice + 2;
         }
-        if (customProfileOption == 1){//detect for choice of addons
+        if (customProfileOption == true){//detect for choice of addons
             customProfileW4.style.display='flex';
             totalPrice = totalPrice + 2;
         }
@@ -181,10 +181,8 @@ nextStep.addEventListener('click', () => {
     }
 
     if (step == 2){
-        if (! mode == 0){
-            if (step < 5){ // detect for too high step number
-                step = step + 1;
-            }
+        if (step < 5){
+            step++;
         }
     }
 
@@ -291,32 +289,32 @@ pro.addEventListener('click', () => {
 
 //window 3
 onlineService.addEventListener('click', () => {
-    if (onlineServiceOption == 0){
+    if (onlineServiceOption == false){
         onlineService.style.borderColor='hsl(243, 100%, 62%)'; onlineService.style.backgroundColor='hsl(231, 100%, 98%)';
-        onlineServiceOption = 1;
+        onlineServiceOption = true;
     }
-    else if (onlineServiceOption == 1){
+    else if (onlineServiceOption == true){
         onlineService.style.background='none'; onlineService.style.borderColor='hsl(231, 11%, 63%)';
-        onlineServiceOption = 0;
+        onlineServiceOption = false;
     }
 })
 largerStorage.addEventListener('click', () => {
-    if (largerStorageOption == 0){
+    if (largerStorageOption == false){
         largerStorage.style.borderColor='hsl(243, 100%, 62%)'; largerStorage.style.backgroundColor='hsl(231, 100%, 98%)';
-        largerStorageOption = 1;
+        largerStorageOption = true;
     }
-    else if (largerStorageOption == 1){
+    else if (largerStorageOption == true){
         largerStorage.style.background='none'; largerStorage.style.borderColor='hsl(231, 11%, 63%)';
-        largerStorageOption = 0;
+        largerStorageOption = false;
     }
 })
 customProfile.addEventListener('click', () => {
-    if (customProfileOption == 0){
+    if (customProfileOption == false){
         customProfile.style.borderColor='hsl(243, 100%, 62%)'; customProfile.style.backgroundColor='hsl(231, 100%, 98%)';
-        customProfileOption = 1;
+        customProfileOption = true;
     }
-    else if (customProfileOption == 1){
+    else if (customProfileOption == true){
         customProfile.style.background='none'; customProfile.style.borderColor='hsl(231, 11%, 63%)';
-        customProfileOption = 0;
+        customProfileOption = false;
     }
 })
