@@ -12,7 +12,7 @@ main{
     margin: 0;
     min-height: 100vh;
     background-color: hsl(228, 33%, 18%);
-    max-width: 600px;
+    max-width: 700px;
     font-family: 'Barlow Semi Condensed';
     margin: 0 auto;
 
@@ -210,6 +210,25 @@ h2{
     }
 }
 
+@media all and (min-width: 1000px) {
+    .borderRock, .borderPaper, .borderScissors{
+        padding: 1.25rem;
+    }
+
+    .borderRock, .borderPaper, .borderScissors, .rock, .paper, .scissors{
+        height: 10rem;
+        width: 10rem;
+    }
+
+    .rock img, .paper img, .scissors img{
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .youLose{
+        top: 30rem;        
+    }
+}
 
 
 
