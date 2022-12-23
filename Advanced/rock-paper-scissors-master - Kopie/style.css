@@ -1,0 +1,235 @@
+html{
+    background-color: hsl(228, 33%, 18%);
+}
+
+body{
+    margin: 0;
+    background-color: white;
+    width: 100%;
+}
+
+main{
+    margin: 0;
+    min-height: 100vh;
+    background-color: hsl(228, 33%, 18%);
+    max-width: 600px;
+    font-family: 'Barlow Semi Condensed';
+    margin: 0 auto;
+
+}
+
+/* header */
+.header{
+    padding: 1rem;
+    margin: 1rem;
+    border: 3px solid hsl(217, 16%, 45%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header img{
+    max-width: 30%;
+    object-fit: contain;
+}
+
+.scoreDiv{
+    background-color: white;
+    padding: .5rem;
+    text-align: center;
+    border-radius: 5px;
+    padding-inline: 1rem;
+}
+
+.scoreDiv p:nth-child(1){
+    margin: 0;
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+
+.scoreDiv p:nth-child(2){
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 700;
+    color: hsl(229, 25%, 31%);
+}
+
+/* game */
+.game, .result{
+    height: 60vh;
+    margin: 1rem;
+    margin-top: 4rem;
+}
+
+/* options */
+.options{
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.rock, .paper, .scissors{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.borderRock, .borderPaper, .borderScissors{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+.borderRock{
+    background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+
+.borderPaper{
+    background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+
+.borderScissors{
+    background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+
+
+/* result */
+.result{
+    display: none;
+}
+
+.comparison{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    color: white;
+}
+
+.youLose{
+    position: absolute;
+    top: 25rem;
+    left: 50%;
+    transform: translateX(-50%);    
+    text-align: center;
+}
+
+.youLose button{
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    padding: .75rem;
+    letter-spacing: 1px;
+    color: hsl(228, 33%, 18%);
+    border: none;
+}
+
+h1{
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem;
+    margin-inline: 0;
+}
+
+/* rules */
+#rulesButton{
+    background: none;
+    padding: .5rem;
+    padding-inline: 2.5rem;
+    border-radius: 5px;
+    border: 1px solid white;
+    color: white;
+    font-family: 'Barlow Semi Condensed';
+    font-size: 1rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 1px;
+}
+
+.rulesSection{
+    font-family: 'Barlow Semi Condensed';
+    width: calc(100% - 8rem);
+    height: 100vh;
+    padding: 4rem;
+    padding-top: 10rem;
+    position: relative;
+    background-color: white;
+    z-index: 2;
+
+    display: none;
+}
+
+h2{
+    font-size: 1.75rem;
+}
+
+.close{
+    position: absolute;
+    bottom: 30vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+@media all and (min-width: 500px) {
+    .borderRock, .borderPaper, .borderScissors{
+        margin-inline: 2rem;
+    }
+
+    body{
+        background-color: hsl(228, 33%, 18%);
+        position: relative;
+    }
+
+    .rulesSection{
+        width: fit-content;
+        height: fit-content;
+        position: absolute;
+        top: 10rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+        padding-top: 2rem;
+    }
+
+    .close{
+        position: absolute;
+        top: 2rem;
+        left: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.colrs{
+    color: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
+    color: hsl(230, 89%, 62%) to hsl(230, 89%, 65%);
+    color: hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
+    color: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
+    color: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+    color: hsl(229, 25%, 31%);
+    color: hsl(229, 64%, 46%);
+    color: hsl(217, 16%, 45%);
+
+}

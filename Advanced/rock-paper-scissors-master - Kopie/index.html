@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Barlow+Semi+Condensed:wght@400;700&family=Big+Shoulders+Display&family=Fraunces:opsz,wght@9..144,500&family=Josefin+Sans:wght@100;300;400&family=Karla:ital,wght@0,300;1,200&family=Kumbh+Sans&family=League+Spartan:wght@100&family=Lexend+Deca:wght@300&family=Libre+Franklin:wght@100;400;600&family=Manrope:wght@300;500;700&family=Martian+Mono:wght@200;500&family=Montserrat:wght@100&family=Open+Sans&family=Outfit:wght@100;300&family=Overpass:wght@100;400;700&family=Poppins:wght@400;600&family=Raleway:wght@200&family=Red+Hat+Display&family=Roboto+Mono:wght@300;600&family=Rubik:wght@300;400;600;700&family=Space+Grotesk:wght@300;500&family=Space+Mono&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main>
+    <div class="header">
+      <img src="images/logo.svg" alt="logo">
+      <div class="scoreDiv">
+        <p>SCORE</p>
+        <p id="score">0</p>
+      </div>
+    </div>
+
+    <section id="options" class="game menu">
+      <div class="options">
+        <div id="paperOption" class="borderPaper option">
+          <button class="paper">
+            <img src="images/icon-paper.svg" alt="paper">
+          </button>
+        </div>
+
+        <div id="scissorsOption" class="borderScissors option">
+          <button class="scissors">
+            <img src="images/icon-scissors.svg" alt="scissors">
+          </button>
+        </div>
+        
+        <div id="rockOption" class="borderRock option">
+          <button class="rock">
+            <img src="images/icon-rock.svg" alt="rock">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="result" class="result menu">
+      <div class="comparison">
+        <div>
+          <div id="yourPaper" class="yourResult">
+            <div class="borderPaper">
+              <div class="paper">
+                <img src="images/icon-paper.svg" alt="paper">
+              </div>
+            </div>
+            <p>You picked</p>
+          </div>
+            
+          <div id="yourScissors" class="yourResult">
+            <div class="borderScissors">
+              <div class="scissors">
+                <img src="images/icon-scissors.svg" alt="scissors">
+              </div>
+            </div>
+            <p>You picked</p>
+          </div>          
+            
+          <div id="yourRock"  class="yourResult">
+            <div class="borderRock">
+              <div class="rock">
+                <img src="images/icon-rock.svg" alt="rock">
+              </div>
+            </div>
+            <p>You picked</p>
+          </div>
+        </div>  
+  
+  
+        <div>
+          <div id="hisPaper" class="hisResult">
+            <div class="borderPaper">
+              <div class="paper">
+                <img src="images/icon-paper.svg" alt="paper">
+              </div>
+            </div>
+            <p>The house picked</p>
+          </div>
+          
+          <div id="hisScissors" class="hisResult">
+            <div class="borderScissors">
+              <div class="scissors">
+                <img src="images/icon-scissors.svg" alt="scissors">
+              </div>
+            </div>
+            <p>The house picked</p>
+          </div>
+          
+          <div id="hisRock" class="hisResult">
+            <div class="borderRock">
+              <div class="rock">
+                <img src="images/icon-rock.svg" alt="rock">
+              </div>
+            </div>
+            <p>The house picked</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="youLose">
+        <h1 id="resultText">YOU LOSE</h1>
+        <button id="playAgain">PLAY AGAIN</button>
+      </div>
+    </section>
+
+    <button id="rulesButton">RULES</button>
+  </main>
+
+  <section id="rulesSection" class="rulesSection">
+    <h2>RULES</h2>
+    <img src="images/image-rules.svg" alt="rules">
+    <img id="close" class="close" src="images/icon-close.svg" alt="x">
+  </section>
+
+  
+</body>
+</html>
