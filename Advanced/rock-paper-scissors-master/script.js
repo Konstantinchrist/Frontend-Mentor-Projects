@@ -1,4 +1,4 @@
-// windows;
+// windows
 const mainWindow = document.querySelector('main');
 const optionsMenu = document.getElementById('options');
 const resultMenu = document.getElementById('result');
@@ -25,6 +25,7 @@ const hisScissors = document.getElementById('hisScissors');
 const hisRock = document.getElementById('hisRock');
 const hisResults = Array.from(document.getElementsByClassName('hisResult'))
 
+const resultTextArea = document.querySelector('.youLose');
 const resultText = document.getElementById('resultText');
 const score = document.getElementById('score');
 
@@ -47,10 +48,18 @@ function show(element){
     // console.log(element + ' is shown now')
 }
 
-function loadResult(){ 
-    loadUsersChoice(); loadComputerChoice(); compareChoices(); 
-    optionsMenu.style.display = 'none'; resultMenu.style.display = 'block';
+function loadScore(){
     resultText.innerHTML = result; score.innerHTML = scoreValue;
+    show(resultTextArea);
+}
+
+function loadResult(){ 
+    hide(resultTextArea); yourResults.forEach(hide); hisResults.forEach(hide);
+    optionsMenu.style.display = 'none'; resultMenu.style.display = 'block';
+    setTimeout(loadUsersChoice, 300);
+    setTimeout(loadComputerChoice, 900);
+    setTimeout(compareChoices, 1000);
+    setTimeout(loadScore, 1500);
 }
 
 // load computer choice
@@ -73,7 +82,7 @@ function loadComputerChoice(){
 }
 
 // load computer choice
-function loadUsersChoice (){
+function loadUsersChoice(){
     yourResults.forEach(hide);
     if (yourChoiceValue == 'rock'){
         show(yourRock);
@@ -89,7 +98,7 @@ function loadUsersChoice (){
 
 // compare choices
 function compareChoices(){
-    if (yourChoiceValue == hisChoiceValue){
+    if (yourChoiceValue == hisChoiceValue) {
         result = 'Remis';
     }
     if (yourChoiceValue == 'rock'){
@@ -120,7 +129,7 @@ function compareChoices(){
             scoreValue++;
         }
     }
-    console.log(yourChoiceValue + ' vs ' + hisChoiceValue + ' => ' + result);
+    // console.log(yourChoiceValue + ' vs ' + hisChoiceValue + ' => ' + result);
 }
 
 // detect users choice

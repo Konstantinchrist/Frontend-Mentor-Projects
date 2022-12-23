@@ -130,6 +130,7 @@ main{
     padding: .75rem;
     letter-spacing: 1px;
     color: hsl(228, 33%, 18%);
+    border: none;
 }
 
 h1{
@@ -157,9 +158,10 @@ h1{
 
 .rulesSection{
     font-family: 'Barlow Semi Condensed';
-    width: calc(100% - 4rem);
+    width: calc(100% - 8rem);
     height: 100vh;
-    padding: 2rem;
+    padding: 4rem;
+    padding-top: 10rem;
     position: relative;
     background-color: white;
     z-index: 2;
@@ -198,6 +200,7 @@ h2{
         left: 50%;
         transform: translateX(-50%);
         border-radius: 10px;
+        padding-top: 2rem;
     }
 
     .close{
