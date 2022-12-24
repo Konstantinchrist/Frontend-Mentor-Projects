@@ -148,6 +148,24 @@ rockButton.addEventListener('click', () => {
     setTimeout(loadResult, 100);
 })
 
+document.addEventListener('keydown', (event) => {
+    if (event.key == 3){
+        yourChoiceValue = 'rock';
+        setTimeout(loadResult, 100);
+    }
+    if (event.key == 2){
+        yourChoiceValue = 'scissors';
+        setTimeout(loadResult, 100);
+    }
+    if (event.key == 1){
+        yourChoiceValue = 'paper';
+        setTimeout(loadResult, 100);
+    }
+    if (event.keyCode == 13 && resultTextArea.style.display == 'block'){
+        hide(resultMenu); show(optionsMenu);
+    }
+})
+
 // playAgain
 playAgainButton.addEventListener('click', () => {
     hide(resultMenu); show(optionsMenu);

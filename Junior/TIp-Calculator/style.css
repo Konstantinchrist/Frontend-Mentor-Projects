@@ -1,6 +1,6 @@
 body{
     min-height: 100vh;
-    background-color: hsl(186, 14%, 43%);
+    background-color: hsl(184, 14%, 56%);
     font-family: 'Space Mono', sans-serif;
 }
 
@@ -9,7 +9,6 @@ body{
     margin-left: 50%;
     transform: translateX(-50%);
 }
-
 
 main{
     background-color: white;
@@ -81,8 +80,7 @@ input:hover{
     margin-bottom: 2rem;
 }
 
-.tip-options button{
-    width: 100%;
+.tip{
     background-color: hsl(183, 100%, 15%);
     color: white;
     padding: .5rem;
@@ -94,7 +92,7 @@ input:hover{
     font-family: 'Space Mono', sans-serif;
 }
 
-.tip-options button:hover,  .button:hover{
+.tip-options p:hover,  .button:hover{
     background-color: hsla(172, 56%, 54%, 0.767);
 }
 
@@ -155,7 +153,7 @@ section:nth-child(2) div p:nth-child(2){
     font-weight: 700;
 }
 
-.button{
+button{
     padding: 2.5%;
     color: hsl(183, 100%, 15%);
     background-color: hsl(172, 67%, 45%);
