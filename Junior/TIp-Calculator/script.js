@@ -13,13 +13,12 @@ const _50 = document.getElementById('fifty');
 const customTip = document.getElementById('custom-tip'); 
 const tips = Array.from(document.querySelectorAll('.tip'));
 
-
 bill.value='0.00';
 people.value='1';
 
-let billValue = 0.00;
+let billValue = 0;
 let peopleValue = 1;
-let tipValue = 0.00;
+let tipValue = 0;
 
 bill.addEventListener('input', reloadAll);
 people.addEventListener('input', reloadAll);
