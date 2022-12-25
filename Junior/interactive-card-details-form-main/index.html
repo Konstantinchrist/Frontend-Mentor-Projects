@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main>
+    <section>
+      <p id="cvcOutput">CVC: 000</p> 
+      <p id="cardNumberOutput">Card Number: 0000 0000 0000 0000</p>
+      <p id="nameOutput">Cardholder Name: Jane Appleseed</p>
+      <p id="expDateOutput">Exp. Date: 00/00</p>
+    </section>
+
+    <section>
+      <form action="#">
+        <label for="name">
+          Cardholder Name
+          <input type="text" name="name" id="nameInput">
+        </label>
+
+        <label for="cardNumber">
+          Card Number
+          <input type="number" name="cardNumber" id="cardNumberInput">
+        </label>
+
+        <label for="expDate">
+          Exp. Date
+          <input type="number" name="month" id="monthInput">
+          <input type="number" name="year" id="yearInput">
+        </label>
+
+        <label for="cvc">
+          cvc
+          <input type="number" name="cvc" id="cvcInput">
+        </label>
+
+      </form>
+      <button>Confirm</button>
+    </section>
+  </main>
+
+  Thank you!
+  We've added your card details
+  Continue
+</body>
+</html>
