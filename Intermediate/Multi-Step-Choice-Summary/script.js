@@ -55,7 +55,7 @@ const number1 = document.getElementById('step-1');
 const number2 = document.getElementById('step-2');
 const number3 = document.getElementById('step-3');
 const number4 = document.getElementById('step-4');
-const stepNumbers = Array.from(document.getElementsByClassName('sidebar-step-number'));
+const stepNumbers = Array.from(document.querySelectorAll('.sidebar-step-number'));
 
 //counters
 let step = 1;
@@ -120,7 +120,6 @@ function resetSidebar(element){
 function resetWindows(element){
     element.style.display='none';
 } 
-
 function resetAll(){
     windows.forEach(resetWindows); stepNumbers.forEach(resetSidebar); Buttons.forEach(resetNavigation); 
 }
@@ -318,3 +317,12 @@ customProfile.addEventListener('click', () => {
         customProfileOption = false;
     }
 })
+
+stepNumbers.forEach(numbersSidebar);
+
+function numbersSidebar(element){
+    element.addEventListener('click', () => {
+        step = parseFloat(element.innerHTML);
+        newStep();
+    })
+}

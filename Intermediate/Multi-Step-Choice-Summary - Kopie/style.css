@@ -1,0 +1,366 @@
+body{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: hsl(217, 100%, 97%);
+    height: 100vh;
+}
+
+/* sidebar */
+.sidebar{
+    width: 100%;
+    position: relative;
+}
+
+.background-sidebar{
+    width: 100%;
+}
+
+.background-sidebar img{
+    width: 100vw;
+}
+
+.sidebar-step-number{
+    height: 2.25rem;
+    width: 2.25rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    font-size: 1.25rem;
+}
+
+.sidebar-steps{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    top: 1rem;
+    left: 25%;
+    min-width: 50%;
+}
+
+.sidebar-text{
+    display: none;
+}
+
+/* main */ 
+.main-section{
+    margin: 1rem;
+    position: absolute;
+    top: 6rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px hsl(206, 94%, 87%);
+    margin-bottom: 4rem;
+    width: calc(100% - 4rem);
+}
+
+/* window 1 */
+label{
+    margin-top: 15rem;
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+input{
+    width: 95%;
+    padding: 3.5%;
+    padding-inline: 2.5%;
+    margin-top: .1rem;
+    border: 1px solid hsl(231, 11%, 63%);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: hsl(231, 11%, 63%);
+}
+
+input:hover{
+    border-color: hsl(243, 100%, 62%);
+}
+
+
+form p{
+    color: white;
+    font-size: .8rem;
+    margin: .1rem;
+    margin-bottom: .75rem;
+    text-align: right;
+}
+
+::placeholder{
+    color: hsl(231, 11%, 63%);
+    font-weight: 500;
+    font-size: .9rem;
+    top: 50%;
+}
+
+.window-1-p{
+    color: hsl(231, 11%, 63%);
+    margin-bottom: .5rem;
+}
+
+/* window 2*/
+.option{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    border: 1px solid hsl(231, 11%, 63%);
+    border-radius: 5px;
+    padding: 1rem;
+    transition: border-color 150ms;
+}
+
+.option:hover{
+    border-color: hsl(243, 100%, 62%);
+}
+
+.option h2, p{
+    margin: 0;
+}
+
+h2{
+    font-size: 1.1rem;
+}
+
+.option div p{
+    color: hsl(231, 11%, 63%);
+    font-size: .8rem;
+}
+
+/* window-3 */
+
+.window-3{
+    display: none;
+}
+
+.plus-price{
+    color: hsl(243, 100%, 62%);
+    margin-right: 0;
+}
+
+.window-3 .option{
+    align-items: center;
+    justify-content: space-between;
+    color: hsl(213, 96%, 18%);
+    gap: .5rem;
+    border-color: hsl(231, 11%, 63%);
+}
+
+.window-3 .option .flex{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.window-3 svg{
+    border: 1px solid hsl(231, 11%, 63%);
+    height: 1rem;
+    width: 1rem;
+    border-radius: 1px;
+}
+
+/* window-4 */
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.summary{
+    background-color: hsl(229, 24%, 92%);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.summary p{
+    color: hsl(231, 11%, 63%);
+}
+
+.summary p:nth-child(even){
+    color: black;
+}
+
+.mode-summary{
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.mode-summary-a{
+    color: blue;
+    text-decoration: underline;
+    font-size: .8rem;
+    margin: 0;
+}
+
+.mode-summary-a:hover{
+    cursor: pointer;
+}
+
+.mode-summary::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    left: 0;
+    bottom: 0;
+}
+
+.mode-summary-h2{
+    margin: 0;
+    margin-bottom: 0;
+}
+
+.total-monthly{
+    padding-left: 1rem;
+}
+
+.total-monthly-value{
+    padding-right: 1rem;
+    color: hsl(243, 100%, 62%);
+}
+
+/* window-5 */
+
+.window-5{
+    text-align: center;
+    margin: 1.5rem;
+}
+
+.window-5 p{
+    line-height: 1.8rem;
+    color: hsl(231, 11%, 63%);
+}
+
+/* navigation */
+
+.navigation{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    height: 3rem;
+}
+
+button{
+    border: none;
+    padding: .5rem;
+    font-size: 1rem;
+}
+
+.goBack-button{
+    background: none;
+    color: hsl(231, 11%, 63%);
+    transition: color 150ms;
+}
+
+.goBack-button:hover{
+    color: hsl(213, 96%, 18%);
+}
+
+.nextStep-button{
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    border-radius: 5px;
+}
+
+.confirm-button{
+    background-color: hsl(243, 100%, 62%);
+    color: white;
+    border-radius: 5px;
+}
+
+
+@media all and (min-width: 900px) {    
+    .background-sidebar img{
+        width: fit-content;
+        overflow: hidden;
+    }
+    .options-w2{
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+    .option-w2{
+        display: block;
+        width: 30%;
+    }
+    .option-info{
+        margin-top: 3rem;
+    }
+    .sidebar{
+        width: 30%;
+        position: relative;
+    }
+    .sidebar-steps{
+        flex-direction: column;
+        height: max-content;
+        gap: 1.5rem;
+        left: 3rem;
+        top: 3rem;
+        min-width: 2.25rem;
+    }
+    .sidebar-texts{
+        position: absolute;
+        top: 3rem;
+        left: 6rem;
+        gap: 1.7rem;
+        display: flex;
+        flex-direction: column-reverse;
+        width: fit-content;
+    }
+    .sidebar-text{
+        display: block;
+        color: white;
+    }
+    .sidebar-text p:nth-child(2){
+        font-weight: 700;
+    }
+    main{
+        position: relative;
+        width: 70%;
+    }
+    .navigation{
+        width: 90%;
+        position: absolute;
+        bottom: 1rem;
+        padding-left: 0;
+        left: 2rem  ;
+    }
+    .main-section{
+        position: relative;
+        width: 90%;
+        box-shadow: none;
+        top: 0;
+        margin-bottom: 0;
+    }
+    body{
+        height: fit-content;
+        display: flex;
+        max-width: 900px;
+        margin: 0 auto;
+        margin-top: 15vh;
+        padding: 1rem;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 1px 1px 5px hsl(206, 94%, 87%);
+    }
+    html{
+        background-color: hsl(217, 100%, 97%);
+    }
+}

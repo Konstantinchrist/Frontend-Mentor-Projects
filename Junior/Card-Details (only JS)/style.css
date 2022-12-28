@@ -1,5 +1,8 @@
 body{
     position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 section{

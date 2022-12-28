@@ -45,16 +45,27 @@ document.addEventListener('input', () => {
 })
 
 confirmBtn.addEventListener('click', () => {
-    if (nameInput.value == ''){
-        console.log('Name is not valid');
+    if (! nameInput.value == ''){
+        if (numberInput.value.length == 16){
+            if (cvcInput.value.length == 3){
+                if (monthInput.value.length == 2 && monthInput.value >= 12){
+                    if (yearInput.value.length == 2){
+                        console.log('success')
+                    }
+                }
+                else{
+                    console.log('month is invalid');
+                }
+            }
+            else{
+                console.log('cvc is invalid');
+            }
+        }
+        else{
+            console.log('number is invalid');
+        }
     }
-    if (numberInput.innerHTML.length == 12){
-        console.log('Cardnumber is not valid');
-    }
-    if (! monthInput.value.length == 2 || ! yearInput.lengt == 2){
-        console.log('Exp. Date is not valid');
-    }
-    if (! cvcInput.value.length == 3){
-        console.log('CVC is not valid');
+    else{
+        console.log('name is invalid');
     }
 })
