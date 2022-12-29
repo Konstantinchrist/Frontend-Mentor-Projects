@@ -19,7 +19,7 @@ const patternPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/
 const goBack = document.getElementById('goBack');
 const nextStep = document.getElementById('nextStep');
 const Confirm = document.getElementById('confirm');
-const Buttons = Array.from(document.getElementsByClassName('button'));
+const buttons = Array.from(document.getElementsByClassName('button'));
 
 //windows
 const window1 = document.getElementById('window-1');
@@ -59,23 +59,63 @@ const stepNumbers = Array.from(document.querySelectorAll('.sidebar-step-number')
 
 //counters
 let step = 1;
-let mode = 1;
-arcade.style.borderColor='hsl(243, 100%, 62%)'; arcade.style.backgroundColor='hsl(231, 100%, 98%)';
-
+let mode = 'arcade';
+let modePrice = 9;
 let onlineServiceOption = false;
 let largerStorageOption = false;
 let customProfileOption = false;
-
+let formValid = false;
 let totalPrice = 0;  
+
+resetAll(); newStep();
+arcade.style.borderColor='hsl(243, 100%, 62%)'; arcade.style.backgroundColor='hsl(231, 100%, 98%)';
+
 // functions
-
-//reset functions
-
-function resetCount(){
-    step === 0;
+function hide(element){
+    element.style.display = 'none';
 }
 
-//input window-1
+function show(element){
+    element.style.display = 'block';
+}
+
+function calculatePrice(){
+    choiceAddons.forEach(hide); totalPrice = 0;
+        if (onlineServiceOption == true){//detect for choice of addons
+            onlineServiceW4.style.display='flex';
+            totalPrice += 1;
+        }
+        if (largerStorageOption == true){//detect for choice of addons
+            largerStorageW4.style.display='flex';
+            totalPrice += 2;
+        }
+        if (customProfileOption == true){//detect for choice of addons
+            customProfileW4.style.display='flex';
+            totalPrice += 2;
+        }
+
+        modeW4.innerHTML = mode;
+        priceMode.innerHTML = '$' + modePrice + '/mo';
+        totalPrice += modePrice;
+        
+        priceArea.innerHTML=('$' + totalPrice + '/mo')
+}
+
+// reset functions
+function resetAll(){
+    windows.forEach(hide); 
+    buttons.forEach(hide);
+    stepNumbers.forEach(resetSidebar);
+}
+
+function resetSidebar(element){
+    element.style.color='white'; element.style.background='none';
+}
+
+function resetErrors(){
+    inputs.forEach(resetInputStyles); errorsInput.forEach(resetErrorStyles);
+}
+
 function resetInputStyles(element){
     element.style.border='1px solid black';
 }
@@ -84,209 +124,133 @@ function resetErrorStyles(element){
     element.style.color='white';
 }
 
-function resetWindow1(){
-    inputs.forEach(resetInputStyles); errorsInput.forEach(resetErrorStyles);
-}
-
-//options window-2
-function resetOptionsW2(element){
+function resetOptions(element){
     element.style.borderColor='black'; element.style.background='none';
 }
 
-//options window-3
-function resetOptionsW3(element){
-    element.style.borderColor='black'; element.style.background='none';
-}
-
-//choice window-4
-function resetChoice(){
-    choiceAddons.forEach(resetChoiceAddons);
-    totalPrice = 0;
-}
-
-function resetChoiceAddons(element){
-    element.style.display='none';
-}
-
-// general 
-function resetNavigation(element){
-    element.style.display='none';
-}
-
-function resetSidebar(element){
-    element.style.color='white'; element.style.background='none';
-}
-
-function resetWindows(element){
-    element.style.display='none';
-} 
-function resetAll(){
-    windows.forEach(resetWindows); stepNumbers.forEach(resetSidebar); Buttons.forEach(resetNavigation); 
-}
-
-newStep(); // reset at beginning  
- 
-
-//button event detection
-goBack.addEventListener('click', () => {
-    if (step > 1){ // detect for too low step number
-        if (step == 4){
-            resetChoice();
-        }
-        step = step - 1;
+// window detection and execution
+// new steps detect and show right objects
+function newStep(){
+    resetAll();
+    switch (step){
+        case 1:
+            window1.style.display='block';
+            number1.style.backgroundColor='white'; number1.style.color='black';
+            nextStep.style.display='block'; goBack.style.display='block';
+            break;
+        case 2:
+            window2.style.display='block';
+            number2.style.backgroundColor='white'; number2.style.color='black';
+            goBack.style.display='block'; nextStep.style.display='block';
+            break;
+        case 3:
+            window3.style.display='block';
+            number3.style.backgroundColor='white'; number3.style.color='black';
+            goBack.style.display='block'; nextStep.style.display='block';
+            break;
+        case 4:
+            window4.style.display='block';
+            number4.style.backgroundColor='white'; number4.style.color='black';
+            Confirm.style.display='block'; goBack.style.display='block';
+            calculatePrice();
+            break;
+        case 5:
+            window5.style.display='block';
+            number4.style.backgroundColor='white'; number4.style.color='black';
     }
-    console.log(step);
-    newStep();
-})
+}
 
-nextStep.addEventListener('click', () => {
-    if (step == 3){
-        resetChoice();
-        if (onlineServiceOption == true){//detect for choice of addons
-            onlineServiceW4.style.display='flex';
-            totalPrice = totalPrice + 1;
-        }
-        if (largerStorageOption == true){//detect for choice of addons
-            largerStorageW4.style.display='flex';
-            totalPrice = totalPrice + 2;
-        }
-        if (customProfileOption == true){//detect for choice of addons
-            customProfileW4.style.display='flex';
-            totalPrice = totalPrice + 2;
-        }
+// move windows by sidebar function
+function numbersSidebar(element){ 
+    element.addEventListener('click', () => {
+        step = parseFloat(element.innerHTML);
+        newStep();
+    })
+}
 
-        if (mode == 3){//detect for choice of mode
-            modeW4.innerHTML = ('Pro'); priceMode.innerHTML = ('$15/mo');
-            totalPrice = totalPrice + 15;
-            if (step < 5){ // detect for too high step number
-                step = step + 1;
-            }
-        }
-        if (mode == 2){//detect for choice of mode
-            modeW4.innerHTML = ('Advanced'); priceMode.innerHTML = ('$12/mo');
-            totalPrice = totalPrice + 12;
-            if (step < 5){ // detect for too high step number
-                step = step + 1;
-            }
-        }
-        if (mode == 1){//detect for choice of mode
-            modeW4.innerHTML = ('Arcade'); priceMode.innerHTML = ('$9/mo');
-            totalPrice = totalPrice + 9;
-            if (step < 5){ // detect for too high step number
-                step = step + 1;
-            }
-        }
-        priceArea.innerHTML=('$' + totalPrice + '/mo')
-    }
-
-    if (step == 2){
-        if (step < 5){
-            step++;
-        }
-    }
-
-    if (step == 1){
-        if (! inputName.value == ''){ // detect for invalid name
-            if (inputEmail.value.match(patternEmail)){ // detect for invalid email
-                if (inputPhone.value.match(patternPhone)){ // detect for invlaid phone number
-                    if (step < 5){ // detect for too high step number
-                        step = step + 1;
+// move windows by buttons function
+function buttonsWindows(element){
+    element.addEventListener('click', () => {
+        switch (element.innerHTML){
+            case 'Go back':
+                if (step > 1){
+                    step--;
+                }
+                break;
+            case 'Next step':
+                if (step == 1){
+                    checkFormValidation();
+                    if (formValid == true){
+                        step++;
                     }
                 }
-            }
+                else{
+                    step++;
+                }
+                break;
+            case 'Confirm': 
+                checkFormValidation();
+                if (formValid == true){
+                    step++;
+                }
+                else{
+                    step = 1;
+                }
         }
-    }
-    newStep();
-})
-
-
-Confirm.addEventListener('click', () => {
-    if (step < 5){ // detect for too high step number
-        step = step + 1;
-    }
-    newStep();
-})
-
-
-
-//detect step number and execute  
-function newStep (){
-    if (step == 1){
-        resetAll();
-        window1.style.display='block';
-        number1.style.backgroundColor='white'; number1.style.color='black';
-        nextStep.style.display='block'; goBack.style.display='block';
-    } 
-    if (step == 2) {
-        resetAll();
-        window2.style.display='block';
-        number2.style.backgroundColor='white'; number2.style.color='black';
-        goBack.style.display='block'; nextStep.style.display='block';
-    }
-    if (step == 3) {
-        resetAll();
-        window3.style.display='block';
-        number3.style.backgroundColor='white'; number3.style.color='black';
-        goBack.style.display='block'; nextStep.style.display='block';
-    } 
-    if (step == 4) {
-        resetAll();
-        window4.style.display='block';
-        number4.style.backgroundColor='white'; number4.style.color='black';
-        Confirm.style.display='block'; goBack.style.display='block';
-    } 
-    if (step == 5) {
-        resetAll();
-        window5.style.display='block';
-        number4.style.backgroundColor='white'; number4.style.color='black';
-    } 
-    
+        newStep();
+    })
 }
 
-//window 1 input errors detect and execute
-nextStep.addEventListener('click', () => {
-    resetWindow1();
-    console.log('execute validation check')
-    if (inputName.value =='' || ! inputName.value == 'x'){
-        errorName.style.color='red'; 
-        inputName.style.border=' 1px solid red';
+// choose mode
+function chooseMode(element){
+    element.addEventListener('click', () => {
+        optionsMode.forEach(resetOptions);
+        mode = element.querySelector('h2').innerHTML.toLowerCase();
+        modePrice = parseFloat(element.querySelector('p').innerHTML.slice(1,3));
+        element.style.borderColor='hsl(243, 100%, 62%)'; element.style.backgroundColor='hsl(231, 100%, 98%)';
+        console.log('mode: ' + mode); console.log('mode price: ' + modePrice); 
+    })
+}
+
+// move windows by sidebar
+stepNumbers.forEach(numbersSidebar);
+
+// move windows by buttons
+buttons.forEach(buttonsWindows);
+
+// window 1/form validation
+function checkFormValidation(){
+    resetErrors();
+    if (inputName.value == ''){
+        errorName.style.color='red'; inputName.style.border=' 1px solid red';
         console.log('name invalid');
+        formValid = false;
+    }
+    else{
+        formValid = true;
     }
     if (! inputEmail.value.match(patternEmail)){
-        errorEmail.style.color='red';
-        inputEmail.style.border=' 1px solid red';
+        errorEmail.style.color='red'; inputEmail.style.border=' 1px solid red';
         console.log('email invalid');
+        formValid = false;
+    }
+    else{
+        formValid = true;
     }
     if (! inputPhone.value.match(patternPhone)){
-        errorPhone.style.color='red';
-        inputPhone.style.border=' 1px solid red';
+        errorPhone.style.color='red'; inputPhone.style.border=' 1px solid red';
         console.log('phone number invalid');
+        formValid = false;
     }
-})
+    else{
+        formValid = true;
+    }
+}
+    
+// window 2/get chosen mode
+optionsMode.forEach(chooseMode);
 
-
-//window 2 detect chosen optiopn and execute
-arcade.addEventListener('click', () => {
-    optionsMode.forEach(resetOptionsW2);
-    arcade.style.borderColor='hsl(243, 100%, 62%)'; arcade.style.backgroundColor='hsl(231, 100%, 98%)';
-    mode = 1;
-    console.log('mode:' + mode);
-})
-advanced.addEventListener('click', () => {
-    optionsMode.forEach(resetOptionsW2);
-    advanced.style.borderColor='hsl(243, 100%, 62%)'; advanced.style.backgroundColor='hsl(231, 100%, 98%)';
-    mode = 2;   
-    console.log('mode:' + mode);
-})
-pro.addEventListener('click', () => {
-    optionsMode.forEach(resetOptionsW2);
-    pro.style.borderColor='hsl(243, 100%, 62%)'; pro.style.backgroundColor='hsl(231, 100%, 98%)';
-    mode = 3;
-    console.log('mode:' + mode);
-})
-
-
-//window 3
+// window 3/get chosen mode
 onlineService.addEventListener('click', () => {
     if (onlineServiceOption == false){
         onlineService.style.borderColor='hsl(243, 100%, 62%)'; onlineService.style.backgroundColor='hsl(231, 100%, 98%)';
@@ -317,12 +281,3 @@ customProfile.addEventListener('click', () => {
         customProfileOption = false;
     }
 })
-
-stepNumbers.forEach(numbersSidebar);
-
-function numbersSidebar(element){
-    element.addEventListener('click', () => {
-        step = parseFloat(element.innerHTML);
-        newStep();
-    })
-}
