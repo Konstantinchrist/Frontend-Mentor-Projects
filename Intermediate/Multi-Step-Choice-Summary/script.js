@@ -43,7 +43,7 @@ const priceArea = document.getElementById('total-price-area');
 const onlineService = document.getElementById('online-service-w3');
 const largerStorage = document.getElementById('larger-storage-w3');
 const customProfile = document.getElementById('custom-profile-w3');
-const optionsAddons = Array.from(document.getElementsByClassName('options-w3'));
+const optionsAddons = Array.from(document.getElementsByClassName('option-w3'));
 
 const onlineServiceW4 = document.getElementById('online-service-w4');
 const largerStorageW4 = document.getElementById('larger-storage-w4');
@@ -59,7 +59,7 @@ const stepNumbers = Array.from(document.querySelectorAll('.sidebar-step-number')
 
 //counters
 let step = 1;
-let mode = 'arcade';
+let mode = 'Arcade';
 let modePrice = 9;
 let onlineServiceOption = false;
 let largerStorageOption = false;
@@ -79,6 +79,7 @@ function show(element){
     element.style.display = 'block';
 }
 
+// calculate price
 function calculatePrice(){
     choiceAddons.forEach(hide); totalPrice = 0;
         if (onlineServiceOption == true){//detect for choice of addons
@@ -126,6 +127,10 @@ function resetErrorStyles(element){
 
 function resetOptions(element){
     element.style.borderColor='black'; element.style.background='none';
+}
+
+function resetInput(element){
+    element.value = '';
 }
 
 // window detection and execution
@@ -192,6 +197,9 @@ function buttonsWindows(element){
                 checkFormValidation();
                 if (formValid == true){
                     step++;
+                    resetAll;
+                    inputs.forEach(resetInput); optionsMode.forEach(resetOptions); optionsAddons.forEach(resetOptions);
+                    arcade.style.borderColor='hsl(243, 100%, 62%)'; arcade.style.backgroundColor='hsl(231, 100%, 98%)';
                 }
                 else{
                     step = 1;
@@ -205,7 +213,7 @@ function buttonsWindows(element){
 function chooseMode(element){
     element.addEventListener('click', () => {
         optionsMode.forEach(resetOptions);
-        mode = element.querySelector('h2').innerHTML.toLowerCase();
+        mode = element.querySelector('h2').innerHTML;
         modePrice = parseFloat(element.querySelector('p').innerHTML.slice(1,3));
         element.style.borderColor='hsl(243, 100%, 62%)'; element.style.backgroundColor='hsl(231, 100%, 98%)';
         console.log('mode: ' + mode); console.log('mode price: ' + modePrice); 
@@ -257,7 +265,7 @@ onlineService.addEventListener('click', () => {
         onlineServiceOption = true;
     }
     else if (onlineServiceOption == true){
-        onlineService.style.background='none'; onlineService.style.borderColor='hsl(231, 11%, 63%)';
+        resetOptions(onlineService);
         onlineServiceOption = false;
     }
 })
@@ -267,7 +275,7 @@ largerStorage.addEventListener('click', () => {
         largerStorageOption = true;
     }
     else if (largerStorageOption == true){
-        largerStorage.style.background='none'; largerStorage.style.borderColor='hsl(231, 11%, 63%)';
+        resetOptions(largerStorage);
         largerStorageOption = false;
     }
 })
@@ -277,7 +285,7 @@ customProfile.addEventListener('click', () => {
         customProfileOption = true;
     }
     else if (customProfileOption == true){
-        customProfile.style.background='none'; customProfile.style.borderColor='hsl(231, 11%, 63%)';
+        resetOptions(customProfile);
         customProfileOption = false;
     }
 })
