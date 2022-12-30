@@ -31,10 +31,13 @@ function show(element){
 }
 
 // calculate tip
-function calculateTip(element){
-    tipValue = parseFloat(element.innerHTML) / 100;
-    tips.forEach(resetTipStyles); element.style.backgroundColor = 'hsl(172, 56%, 34%)';
-    reloadAll();
+function claculateTip(element){
+    element.addEventListener('click', () => {
+        tipValue = parseFloat(element.innerHTML) / 100;
+        tips.forEach(resetTipStyles); element.style.backgroundColor = 'hsl(172, 56%, 34%)';
+        reloadAll();
+        console.log('tip calculate')
+    })
 }
 
 function resetTipStyles(element){
@@ -62,8 +65,8 @@ function reloadAll(){
     else{
         show(error);
         people.style.borderColor='red';
-        tipPerPerson.innerHTML=('$0.00');
-        totalPerPerson.innerHTML=('$0.00');
+        tipPerPerson.innerHTML='$0.00';
+        totalPerPerson.innerHTML='$0.00';
     }
 }
 
@@ -72,27 +75,13 @@ resetButton.addEventListener('click', () => {
     bill.value='0.00';
     people.value='1';
     customTip.value = '';
-    tipPerPerson.innerHTML=('$0.00'); totalPerPerson.innerHTML=('$0.00');
+    tipPerPerson.innerHTML='$0.00'; totalPerPerson.innerHTML='$0.00';
     tips.forEach(resetTipStyles); hide(error);
     people.style.borderColor='hsl(185, 41%, 84%)';
 })
 
 // get tip value
-_5.addEventListener('click', () => {
-    calculateTip(_5);
-});
-_10.addEventListener('click', () => {
-    calculateTip(_10);
-});
-_15.addEventListener('click', () => {
-    calculateTip(_15);
-});
-_20.addEventListener('click', () => {
-    calculateTip(_20);
-});
-_50.addEventListener('click', () => {
-    calculateTip(_50);
-});
+tips.forEach(claculateTip)
 
 customTip.addEventListener('input', () => {
     if (parseFloat(customTip.value) >= 0) {

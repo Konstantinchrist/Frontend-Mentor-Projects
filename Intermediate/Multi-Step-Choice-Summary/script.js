@@ -67,8 +67,7 @@ let customProfileOption = false;
 let formValid = false;
 let totalPrice = 0;  
 
-resetAll(); newStep();
-arcade.style.borderColor='hsl(243, 100%, 62%)'; arcade.style.backgroundColor='hsl(231, 100%, 98%)';
+resetAll(); newStep(); chosenOptionStyle(arcade);
 
 // functions
 function hide(element){
@@ -77,6 +76,14 @@ function hide(element){
 
 function show(element){
     element.style.display = 'block';
+}
+
+function currentNumberStyle(element){
+    element.style.backgroundColor='white'; element.style.color='black';
+}
+
+function chosenOptionStyle(element){
+    element.style.borderColor='hsl(243, 100%, 62%)'; element.style.backgroundColor='hsl(231, 100%, 98%)';
 }
 
 // calculate price
@@ -139,29 +146,20 @@ function newStep(){
     resetAll();
     switch (step){
         case 1:
-            window1.style.display='block';
-            number1.style.backgroundColor='white'; number1.style.color='black';
-            nextStep.style.display='block'; goBack.style.display='block';
+            show(window1); show(goBack); show(nextStep); currentNumberStyle(number1);
             break;
         case 2:
-            window2.style.display='block';
-            number2.style.backgroundColor='white'; number2.style.color='black';
-            goBack.style.display='block'; nextStep.style.display='block';
+            show(window2); show(goBack); show(nextStep); currentNumberStyle(number2);
             break;
         case 3:
-            window3.style.display='block';
-            number3.style.backgroundColor='white'; number3.style.color='black';
-            goBack.style.display='block'; nextStep.style.display='block';
+            show(window3); show(goBack); show(nextStep); currentNumberStyle(number3);
             break;
         case 4:
-            window4.style.display='block';
-            number4.style.backgroundColor='white'; number4.style.color='black';
-            Confirm.style.display='block'; goBack.style.display='block';
+            show(window4); show(goBack); show(Confirm); currentNumberStyle(number4);
             calculatePrice();
             break;
         case 5:
-            window5.style.display='block';
-            number4.style.backgroundColor='white'; number4.style.color='black';
+            show(window5); currentNumberStyle(number4);
     }
 }
 
@@ -182,24 +180,31 @@ function buttonsWindows(element){
                     step--;
                 }
                 break;
+
             case 'Next step':
                 if (step == 1){
                     checkFormValidation();
-                    if (formValid == true){
+                    if (! inputName.value == '' &&
+                        inputEmail.value.match(patternEmail) &&
+                        inputPhone.value.match(patternPhone)){ // detect for invalid name/email/phoneNumber
                         step++;
+                        resetAll(); chosenOptionStyle(arcade);
                     }
                 }
                 else{
                     step++;
                 }
                 break;
+
             case 'Confirm': 
                 checkFormValidation();
-                if (formValid == true){
+                if (! inputName.value == '' &&
+                    inputEmail.value.match(patternEmail) &&
+                    inputPhone.value.match(patternPhone)){ // detect for invalid name/email/phoneNumber
                     step++;
-                    resetAll;
+                    resetAll();
                     inputs.forEach(resetInput); optionsMode.forEach(resetOptions); optionsAddons.forEach(resetOptions);
-                    arcade.style.borderColor='hsl(243, 100%, 62%)'; arcade.style.backgroundColor='hsl(231, 100%, 98%)';
+                    chosenOptionStyle(arcade);
                 }
                 else{
                     step = 1;
@@ -215,43 +220,33 @@ function chooseMode(element){
         optionsMode.forEach(resetOptions);
         mode = element.querySelector('h2').innerHTML;
         modePrice = parseFloat(element.querySelector('p').innerHTML.slice(1,3));
-        element.style.borderColor='hsl(243, 100%, 62%)'; element.style.backgroundColor='hsl(231, 100%, 98%)';
+        chosenOptionStyle(element);
         console.log('mode: ' + mode); console.log('mode price: ' + modePrice); 
     })
 }
 
 // move windows by sidebar
 stepNumbers.forEach(numbersSidebar);
-
 // move windows by buttons
 buttons.forEach(buttonsWindows);
 
 // window 1/form validation
 function checkFormValidation(){
     resetErrors();
-    if (inputName.value == ''){
-        errorName.style.color='red'; inputName.style.border=' 1px solid red';
+    if (inputName.value =='' || ! inputName.value == 'x'){
+        errorName.style.color='red'; 
+        inputName.style.border=' 1px solid red';
         console.log('name invalid');
-        formValid = false;
-    }
-    else{
-        formValid = true;
     }
     if (! inputEmail.value.match(patternEmail)){
-        errorEmail.style.color='red'; inputEmail.style.border=' 1px solid red';
+        errorEmail.style.color='red';
+        inputEmail.style.border=' 1px solid red';
         console.log('email invalid');
-        formValid = false;
-    }
-    else{
-        formValid = true;
     }
     if (! inputPhone.value.match(patternPhone)){
-        errorPhone.style.color='red'; inputPhone.style.border=' 1px solid red';
+        errorPhone.style.color='red';
+        inputPhone.style.border=' 1px solid red';
         console.log('phone number invalid');
-        formValid = false;
-    }
-    else{
-        formValid = true;
     }
 }
     
@@ -261,7 +256,7 @@ optionsMode.forEach(chooseMode);
 // window 3/get chosen mode
 onlineService.addEventListener('click', () => {
     if (onlineServiceOption == false){
-        onlineService.style.borderColor='hsl(243, 100%, 62%)'; onlineService.style.backgroundColor='hsl(231, 100%, 98%)';
+        chosenOptionStyle(onlineService);
         onlineServiceOption = true;
     }
     else if (onlineServiceOption == true){
@@ -271,7 +266,7 @@ onlineService.addEventListener('click', () => {
 })
 largerStorage.addEventListener('click', () => {
     if (largerStorageOption == false){
-        largerStorage.style.borderColor='hsl(243, 100%, 62%)'; largerStorage.style.backgroundColor='hsl(231, 100%, 98%)';
+        chosenOptionStyle(largerStorage);
         largerStorageOption = true;
     }
     else if (largerStorageOption == true){
@@ -281,7 +276,7 @@ largerStorage.addEventListener('click', () => {
 })
 customProfile.addEventListener('click', () => {
     if (customProfileOption == false){
-        customProfile.style.borderColor='hsl(243, 100%, 62%)'; customProfile.style.backgroundColor='hsl(231, 100%, 98%)';
+        chosenOptionStyle(customProfile);
         customProfileOption = true;
     }
     else if (customProfileOption == true){
