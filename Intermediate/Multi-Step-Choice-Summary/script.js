@@ -237,9 +237,7 @@ function chooseAddons(element){ // function for detecting addons and performing 
     })
 }
 
-// window 4/price summary & else
-
-// calculate price
+// window 4/caclulate and display price
 function calculatePrice(){
     choiceAddons.forEach(hide);
     totalPrice = 0;
