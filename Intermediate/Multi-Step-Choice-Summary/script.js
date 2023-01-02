@@ -154,8 +154,11 @@ function buttonsWindows(element){
                     inputPhone.value.match(patternPhone)){ // detect for invalid name/email/phoneNumber
                     step++;
                     resetAll();
-                    inputs.forEach(resetInput); optionsMode.forEach(resetOptions); optionsAddons.forEach(resetOptions);
-                    chosenOptionStyle(arcade);
+                    inputs.forEach(resetInputStyles); inputs.forEach(clearInput); 
+                    optionsMode.forEach(resetOptionStyle); optionsAddons.forEach(resetOptionStyle);
+                    addOptionStyle(arcade);
+                    mode = 'arcade'; modePrice = 9;
+                    calculatePrice();
                 }
                 else{
                     step = 1;
@@ -175,7 +178,7 @@ function resetErrorStyles(element){
     element.style.color='white';
 }
 
-function resetInput(element){
+function clearInput(element){
     element.value = '';
 }
 
@@ -203,9 +206,11 @@ function checkFormValidation(){
 
 function resetOptionStyle(element){
     element.style.borderColor='black'; element.style.background='none';
+    element.value = false;
 }
 function addOptionStyle(element){
     element.style.borderColor='hsl(243, 100%, 62%)'; element.style.backgroundColor='hsl(231, 100%, 98%)';
+    element.value = true;
 }
 
 // window 2/get chosen mode
@@ -227,11 +232,9 @@ function chooseAddons(element){ // function for detecting addons and performing 
     element.addEventListener('click', () => {
         if (element.value == false){
             addOptionStyle(element);
-            element.value = true;
         }
         else{
             resetOptionStyle(element);
-            element.value = false;
         }
         // console.log(element.value)
     })
