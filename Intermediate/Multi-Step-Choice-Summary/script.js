@@ -75,9 +75,7 @@ function show(element){
 }
 
 function resetAll(){
-    windows.forEach(hide); 
-    buttons.forEach(hide);
-    stepNumbers.forEach(resetNumberStyle);
+    windows.forEach(hide); buttons.forEach(hide); stepNumbers.forEach(resetNumberStyle);
 }
 
 // window detection and execution
@@ -157,7 +155,7 @@ function buttonsWindows(element){
                     inputs.forEach(resetInputStyles); inputs.forEach(clearInput); 
                     optionsMode.forEach(resetOptionStyle); optionsAddons.forEach(resetOptionStyle);
                     addOptionStyle(arcade);
-                    mode = 'arcade'; modePrice = 9;
+                    mode = 'Arcade'; modePrice = 9;
                     calculatePrice();
                 }
                 else{
@@ -186,18 +184,15 @@ function checkFormValidation(){
     inputs.forEach(resetInputStyles);
     errorsInput.forEach(resetErrorStyles);
     if (inputName.value ==''){
-        errorName.style.color='red'; 
-        inputName.style.border=' 1px solid red';
+        errorName.style.color='red'; inputName.style.border=' 1px solid red';
         // console.log('name invalid');
     }
     if (! inputEmail.value.match(patternEmail)){
-        errorEmail.style.color='red';
-        inputEmail.style.border=' 1px solid red';
+        errorEmail.style.color='red'; inputEmail.style.border=' 1px solid red';
         // console.log('email invalid');
     }
     if (! inputPhone.value.match(patternPhone)){
-        errorPhone.style.color='red';
-        inputPhone.style.border=' 1px solid red';
+        errorPhone.style.color='red'; inputPhone.style.border=' 1px solid red';
         // console.log('phone number invalid');
     }
 }
@@ -259,5 +254,5 @@ function calculatePrice(){
         modeOutput.innerHTML = mode; // output chosen mode
         priceModeOutput.innerHTML = '$' + modePrice + '/mo'; // output price of chose mode
         totalPrice += modePrice; // calculate final total price
-        priceTotalOutput.innerHTML=('$' + totalPrice + '/mo') // output total price
+        priceTotalOutput.innerHTML = '$' + totalPrice + '/mo'; // output total price
 }
