@@ -30,9 +30,6 @@ const window5 = document.getElementById('window-5');
 const windows = Array.from(document.getElementsByClassName('window'));
 
 //modes
-const pro = document.getElementById('pro');
-const advanced = document.getElementById('advanced');
-const arcade = document.getElementById('arcade');
 const optionsMode = Array.from(document.getElementsByClassName('option-w2'));
 
 const modeOutput = document.getElementById('mode');
@@ -40,14 +37,8 @@ const priceModeOutput = document.getElementById('mode-price-1');
 const priceTotalOutput = document.getElementById('total-price-area');
 
 //add-ons
-const onlineService = document.getElementById('online-service-w3');
-const largerStorage = document.getElementById('larger-storage-w3');
-const customProfile = document.getElementById('custom-profile-w3');
 const optionsAddons = Array.from(document.getElementsByClassName('option-w3'));
 
-const onlineServiceOutput = document.getElementById('online-service-w4');
-const largerStorageOutput = document.getElementById('larger-storage-w4');
-const customProfileOutput = document.getElementById('custom-profile-w4');
 const choiceAddons = Array.from(document.getElementsByClassName('option-w4'));
 
 //steps sidebar
@@ -152,7 +143,14 @@ function buttonsWindows(element){
                     inputPhone.value.match(patternPhone)){ // detect for invalid name/email/phoneNumber
                     step++;
                     resetAll();
-                    inputs.forEach(resetInputStyles); inputs.forEach(clearInput); 
+                    inputs.forEach(function (element){
+                        element.style.border='1px solid black';
+                    });
+                    inputs.forEach(function (element){
+                        element.value = '';
+                    }
+
+                    ); 
                     optionsMode.forEach(resetOptionStyle); optionsAddons.forEach(resetOptionStyle);
                     addOptionStyle(arcade);
                     mode = 'Arcade'; modePrice = 9;
@@ -167,22 +165,15 @@ function buttonsWindows(element){
 }
 
 // window 1/form validation
-
-function resetInputStyles(element){
-    element.style.border='1px solid black';
-}
-
-function resetErrorStyles(element){
-    element.style.color='white';
-}
-
-function clearInput(element){
-    element.value = '';
-}
-
 function checkFormValidation(){
-    inputs.forEach(resetInputStyles);
-    errorsInput.forEach(resetErrorStyles);
+    inputs.forEach(function (element){
+        element.style.border='1px solid black';
+    });
+    errorsInput.forEach(function (element){
+        element.style.color='white';
+    });
+
+
     if (inputName.value ==''){
         errorName.style.color='red'; inputName.style.border=' 1px solid red';
         // console.log('name invalid');
@@ -209,8 +200,7 @@ function addOptionStyle(element){
 }
 
 // window 2/get chosen mode
-optionsMode.forEach(chooseMode);
-function chooseMode(element){
+optionsMode.forEach(function (element){
     element.addEventListener('click', () => {
         optionsMode.forEach(resetOptionStyle); // styling
         addOptionStyle(element); // ''
@@ -218,11 +208,10 @@ function chooseMode(element){
         modePrice = parseFloat(element.querySelector('p').innerHTML.slice(1,3)); // get price of mode
         // console.log('mode: ' + mode); console.log('mode price: ' + modePrice); 
     })
-}
+});
 
 // window 3/get chosen mode
-optionsAddons.forEach(chooseAddons);
-function chooseAddons(element){ // function for detecting addons and performing their styling
+optionsAddons.forEach(function (element){
     element.value = false;
     element.addEventListener('click', () => {
         if (element.value == false){
@@ -233,26 +222,20 @@ function chooseAddons(element){ // function for detecting addons and performing 
         }
         // console.log(element.value)
     })
-}
+});
 
 // window 4/caclulate and display price
 function calculatePrice(){
     choiceAddons.forEach(hide);
     totalPrice = 0;
-        if (onlineService.value == true){ // detect for choice of addons
-            onlineServiceOutput.style.display='flex';
-            totalPrice += 1;
+    optionsAddons.forEach(function (element) {
+        if (element.value == true){ // detect for choice of addons
+            document.getElementById(element.id + 'Output').style.display = 'flex';
+            totalPrice += parseFloat(element.querySelector('.plus-price').innerHTML.slice(2));
         }
-        if (largerStorage.value == true){ // detect for choice of addons
-            largerStorageOutput.style.display='flex';
-            totalPrice += 2;
-        }
-        if (customProfile.value == true){ // detect for choice of addons
-            customProfileOutput.style.display='flex';
-            totalPrice += 2;
-        }
-        modeOutput.innerHTML = mode; // output chosen mode
-        priceModeOutput.innerHTML = '$' + modePrice + '/mo'; // output price of chose mode
-        totalPrice += modePrice; // calculate final total price
-        priceTotalOutput.innerHTML = '$' + totalPrice + '/mo'; // output total price
+    })
+    modeOutput.innerHTML = mode; // output chosen mode
+    priceModeOutput.innerHTML = '$' + modePrice + '/mo'; // output price of chose mode
+    totalPrice += modePrice; // calculate final total price
+    priceTotalOutput.innerHTML = '$' + totalPrice + '/mo'; // output total price
 }
