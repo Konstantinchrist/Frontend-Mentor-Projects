@@ -1,9 +1,9 @@
 // Variables //
 
 //inputs & errors
-const errorName = document.getElementById('error-name');
-const errorEmail = document.getElementById('error-email');
-const errorPhone = document.getElementById('error-phone');
+//const errorName = document.getElementById('error-name');
+//const errorEmail = document.getElementById('error-email');
+//const errorPhone = document.getElementById('error-phone');
 const errorsInput = Array.from(document.getElementsByClassName('error-message'));
 
 const inputName = document.getElementById('input-name');
@@ -22,11 +22,6 @@ const Confirm = document.getElementById('confirm');
 const buttons = Array.from(document.getElementsByClassName('button'));
 
 //windows
-const window1 = document.getElementById('window-1');
-const window2 = document.getElementById('window-2');
-const window3 = document.getElementById('window-3');
-const window4 = document.getElementById('window-4');
-const window5 = document.getElementById('window-5');
 const windows = Array.from(document.getElementsByClassName('window'));
 
 //modes
@@ -38,14 +33,9 @@ const priceTotalOutput = document.getElementById('total-price-area');
 
 //add-ons
 const optionsAddons = Array.from(document.getElementsByClassName('option-w3'));
-
 const choiceAddons = Array.from(document.getElementsByClassName('option-w4'));
 
 //steps sidebar
-const number1 = document.getElementById('step-1');
-const number2 = document.getElementById('step-2');
-const number3 = document.getElementById('step-3');
-const number4 = document.getElementById('step-4');
 const stepNumbers = Array.from(document.querySelectorAll('.sidebar-step-number'));
 
 //counters & else
@@ -74,22 +64,23 @@ function resetAll(){
 // step count => show/hide objects
 function newStep(){
     resetAll();
+    show(document.getElementById('window-'+ step));
+    if (step < 5){
+        addNumberStyle(document.getElementById('number' + step));
+    }
     switch (step){ 
         case 1:
-            show(window1); show(goBack); show(nextStep); addNumberStyle(number1);
+            show(goBack); show(nextStep);
             break;
         case 2:
-            show(window2); show(goBack); show(nextStep); addNumberStyle(number2);
+            show(goBack); show(nextStep);
             break;
         case 3:
-            show(window3); show(goBack); show(nextStep); addNumberStyle(number3);
+            show(goBack); show(nextStep);
             break;
         case 4:
-            show(window4); show(goBack); show(Confirm); addNumberStyle(number4);
-            calculatePrice();
-            break;
-        case 5:
-            show(window5); addNumberStyle(number4);
+            show(goBack); show(Confirm); 
+            calculatePrice();;
     }
 }
 
@@ -173,19 +164,13 @@ function checkFormValidation(){
         element.style.color='white';
     });
 
-
-    if (inputName.value ==''){
-        errorName.style.color='red'; inputName.style.border=' 1px solid red';
-        // console.log('name invalid');
-    }
-    if (! inputEmail.value.match(patternEmail)){
-        errorEmail.style.color='red'; inputEmail.style.border=' 1px solid red';
-        // console.log('email invalid');
-    }
-    if (! inputPhone.value.match(patternPhone)){
-        errorPhone.style.color='red'; inputPhone.style.border=' 1px solid red';
-        // console.log('phone number invalid');
-    }
+    inputs.forEach(function (element){
+        if (element.value == '' || ! element.value.match(patternEmail)){
+            element.style.border=' 1px solid red';
+            console.log((element.id.slice(6)+ '-error'))
+            document.getElementById(element.id.slice(6)+ '-error').style.color='red';
+        }
+    })
 }
     
 // modes & addons (2/3)
