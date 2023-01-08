@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Barlow+Semi+Condensed:wght@400;700&family=Big+Shoulders+Display&family=Chivo+Mono:ital,wght@0,200;0,300;0,500;1,700&family=Fraunces:opsz,wght@9..144,500&family=Josefin+Sans:wght@100;300;400&family=Karla:ital,wght@0,300;1,200&family=Kumbh+Sans&family=League+Spartan:wght@100&family=Lexend+Deca:wght@300&family=Libre+Franklin:wght@100;400;600&family=Manrope:wght@300;500;700&family=Martian+Mono:wght@200;500&family=Montserrat:wght@100&family=Open+Sans&family=Outfit:wght@100;300&family=Overpass:wght@100;400;700&family=Poppins:wght@400;600&family=Raleway:wght@200&family=Red+Hat+Display&family=Roboto+Mono:wght@300;600&family=Roboto:wght@100;300;400&family=Rubik:wght@300;400;600;700&family=Space+Grotesk:wght@300;500&family=Space+Mono&family=Ubuntu:wght@300;400;700&display=swap');
+
+:root{
+    --Grayish-blue: hsl(237, 18%, 59%);
+    --Soft-red: hsl(345, 95%, 68%);
+    --White: hsl(0, 0%, 100%);
+    --Dark-desaturated-blue: hsl(237, 28%, 14%);
+    --Very-dark-blue: hsl(235, 16%, 14%);
+    --Very-dark-blue-black: hsl(234, 17%, 12%);
+}
+
+body {
+    margin: 0;
+    font-family: 'Ubuntu';
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: var(--Very-dark-blue);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hills {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 7rem;
+    overflow: hidden;
+}
+
+.stars {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.upper {
+    border-radius: 5px;
+    background-color: var(--Very-dark-blue-black);
+    width: 4rem;
+    height: 2rem;
+}
+
+.lower {
+    border-radius: 5px;
+    background-color: var(--Dark-desaturated-blue);
+    width: 4rem;
+    height: 2rem;
+}
+
+span {
+    color: var(--Soft-red);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+main div div div {
+    position: relative;
+}
+
+main div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main div div {
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem; 
+}
+
+main {
+    min-width: 300px;
+}
+
+p {
+    font-size: .75rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem;
+    width: calc(100% - 4rem);
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+@media all and (min-width: 800px) {
+    .upper, .lower {
+        width: 7rem;
+        height: 3.5rem;
+        margin-inline: 1rem;
+    }
+}
